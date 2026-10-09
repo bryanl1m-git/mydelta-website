@@ -1,0 +1,65 @@
+# Pull-request check. Assembles site/*.html from src/ and fails if the
+# committed pages do not match, or if a page is missing its skeleton.
+# Does not deploy, and does not set a custom domain.
+
+name: PR check
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  assemble:
+    name: Assemble and sanity-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Assemble pages from src
+        run: python3 scripts/assemble_pages.py
+
+      - name: Committed HTML matches the assemble script
+        run: |
+          if ! git diff --exit-code -- site/; then
+            echo "::error::site/*.html is out of date. Edit src/ and run python3 scripts/assemble_pages.py."
+            exit 1
+          fi
+
+      - name: Sanity-check assembled pages
+        run: |
+          python3 - <<'PY'
+          import sys
+          from pathlib import Path
+
+          expected = (
+              "index.html",
+              "about.html",
+              "primary-daycare.html",
+              "public-speaking.html",
+              "hall-of-fame.html",
+              "contact.html",
+          )
+          site = Path("site")
+          errors = []
+          for name in expected:
+              path = site / name
+              if not path.is_file():
+                  errors.append(f"missing site/{name}")
+                  continue
+              text = path.read_text(encoding="utf-8")
+              if "Assembled from src/ by scripts/assemble_pages.py" not in text:
+                  errors.append(f"site/{name} was not produced by the assemble script")
+              if "<!DOCTYPE html>" not in text or '<main id="main">' not in text:
+                  errors.append(f"site/{name} is missing the page skeleton")
+              if "{{" in text:
+                  errors.append(f"site/{name} still has an unreplaced token")
+              if text.count("<h1") != 1:
+                  errors.append(f"site/{name} should have exactly one h1")
+          if errors:
+              print("\n".join(errors), file=sys.stderr)
+              sys.exit(1)
+          print(f"checked {len(expected)} pages")
+          PY
