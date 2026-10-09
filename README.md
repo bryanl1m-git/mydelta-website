@@ -22,7 +22,7 @@ python3 -m http.server 8765 --directory site
 
 Then open `http://127.0.0.1:8765/`.
 
-Shared header and footer live in `src/partials/`. Page sections live in `src/pages/`. Edit those, run the script, and commit both the sources and `site/*.html`. The Actions workflow uploads `site/` and does not run the script.
+Shared header and footer live in `src/partials/`. Page sections live in `src/pages/`. Edit those, run the script, and commit both the sources and `site/*.html`. The Pages workflow uploads `site/` and does not run the script. Pull requests run the script and fail if the committed HTML does not match.
 
 ## Session 1
 
@@ -38,7 +38,7 @@ Placeholder photos, reviews, Hall of Fame cards, and social URLs are listed in `
 
 ## Deploy
 
-`.github/workflows/pages.yml` checks out the repo, uploads `site/` with `actions/upload-pages-artifact`, and deploys with `actions/deploy-pages`. It runs on a push to `main`, or by hand. There is no `CNAME` file.
+`.github/workflows/pages.yml` checks out the repo, uploads `site/` with `actions/upload-pages-artifact`, and deploys with `actions/deploy-pages`. It runs on a push to `main`, or by hand. There is no `CNAME` file. `.github/workflows/pr-check.yml` runs on pull requests: it assembles the pages and checks that `site/*.html` matches the sources.
 
 ## Sign-off
 

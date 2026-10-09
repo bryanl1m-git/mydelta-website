@@ -513,6 +513,21 @@ body.menu-open {
   font-weight: 600;
 }
 
+.draft-marker {
+  display: inline-block;
+  margin-right: var(--space-8);
+  padding: 0 var(--space-8);
+  border-radius: var(--radius-tile);
+  background: var(--color-highlight);
+  color: var(--color-heading);
+  font-family: var(--font-nav);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 22px;
+  vertical-align: 1px;
+}
+
 .hero__media {
   position: relative;
 }

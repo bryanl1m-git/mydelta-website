@@ -8,7 +8,7 @@ Agreed defaults used here: a 3-slide hero with no autoplay (markup only), the li
 
 Notes for Cody:
 
-- Slide 2 and slide 3 sublines are draft copy so the skeleton has text. Confirm them against the Figma master slides.
+- Slide 2 and slide 3 sublines carry a visible DRAFT marker. The copy stays until it is checked against the Figma master slides.
 - The live daycare timetable writes "11.45pm" in the morning session. This site uses 11.45 am, because that block sits before 12:00 pm.
 - Centre hours on every page are Mon–Fri 8:00 am – 6:00 pm, as in the design. The daycare timetable still runs 7:00 am – 7:00 pm, as on the current site. Both are shown, with one sentence on the daycare page.
 - Vision text keeps "pursuit forwards". Flagged, not changed.
