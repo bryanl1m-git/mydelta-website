@@ -4,7 +4,7 @@ Static marketing site for MyDelta Academy in Bandar Botanik, Klang. Six pages, p
 
 ## Pages
 
-- `site/index.html` — Home (3-slide hero markup, slider not wired yet)
+- `site/index.html` — Home (manual 3-slide hero, no autoplay)
 - `site/about.html` — About Us
 - `site/primary-daycare.html` — Primary Daycare, including Primary Tuition
 - `site/public-speaking.html` — Public Speaking
@@ -28,11 +28,14 @@ Shared header and footer live in `src/partials/`. Page sections live in `src/pag
 
 Done: tokens, shared chrome, page skeletons, contact fallback, Pages workflow.
 
-Not done yet, with TODOs in the CSS and JS:
+## Session 2
 
-- Manual 3-slide hero (no autoplay)
-- Mobile menu polish
-- Responsive / tablet pass
+Done: manual hero slider (previous, next, dots, keyboard, swipe, no autoplay), mobile menu focus trap and animation, and a tablet layout. The menu button stays through 999px, including the 768–900px band, because the six links do not fit beside the logo there. Horizontal nav starts at 1000px.
+
+Still open, in the CSS header:
+
+- Per-section wave heights
+- Column alignment and equal photo heights
 
 Placeholder photos, reviews, Hall of Fame cards, and social URLs are listed in `docs/placeholders.md`. The session log is `docs/session-log.md`.
 
