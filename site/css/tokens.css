@@ -1,0 +1,74 @@
+/*
+  MyDelta design tokens, from the approved redesign spec.
+  Colours, type, spacing, and radii only. Layout lives in site.css.
+*/
+
+:root {
+  /* Colour */
+  --color-heading: #20409a;
+  --color-navy: #384c86;
+  --color-accent: #fa5c3b;
+  --color-accent-pressed: #e14a2a;
+  --color-body: #202020;
+  --color-cream: #f9f6ef;
+  --color-yellow-band: #ffdd98;
+  --color-orange-band: #f05d23;
+  --color-highlight: #f7b815;
+  --color-whatsapp: #128c7e;
+  --color-slider-arrow: #81898d;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Type families. Nunito for content, Baloo 2 for chrome, Catamaran for the copyright line. */
+  --font-heading: "Nunito", sans-serif;
+  --font-nav: "Baloo 2", sans-serif;
+  --font-footer: "Catamaran", sans-serif;
+
+  /* Type scale. Mobile sizes are the default; desktop overrides in site.css. */
+  --text-hero-size: 36px;
+  --text-hero-line: 42px;
+  --text-h2-size: 32px;
+  --text-h2-line: 38px;
+  --text-h3-size: 28px;
+  --text-h3-line: 34px;
+  --text-h4-size: 20px;
+  --text-h4-line: 26px;
+  --text-lead-size: 18px;
+  --text-lead-line: 26px;
+  --text-body-size: 16px;
+  --text-body-line: 26px;
+  --text-button-size: 23px;
+  --text-nav-size: 18px;
+  --text-topbar-size: 16px;
+
+  /* Spacing scale from the mobile frames: 4 / 8 / 12 / 16 / 20 / 24 / 32 / 40 / 48 / 64. */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+
+  /* Radii */
+  --radius-button: 20px;
+  --radius-whatsapp: 0 20px 20px 20px;
+  --radius-photo: 38px;
+  --radius-card: 44px;
+  --radius-image: 20px;
+  --radius-tile: 12px;
+  --radius-full: 999px;
+
+  /* Layout */
+  --page-max: 1440px;
+  --content-max: 1120px;
+  --header-height-desktop: 151px;
+  --header-height-mobile: 64px;
+  --page-hero-min: 256px;
+  --section-pad: var(--space-40);
+  --wave-height: 28px;
+  --side-pad: var(--space-24);
+}
