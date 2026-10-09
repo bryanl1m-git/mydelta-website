@@ -18,3 +18,15 @@ Notes for Cody:
 - Social URLs are the ones in the design notes and are marked pending. TikTok and Xiaohongshu are filler addresses.
 
 — Sage
+
+## 10 Oct 2026 — Session 2 interactions
+
+Home hero cycles three existing slides by hand: previous, next, and dots, plus Left and Right keys. Nothing autoplays. The change takes 450ms, and it is instant when `prefers-reduced-motion` is set. Below 1100px the arrows are hidden, a swipe of about 40px changes the slide without taking over vertical scroll, dots sit under the photo, and a chip reads N / 3.
+
+The mobile menu traps Tab, marks the header, main, and footer inert, closes on Escape, and puts focus back on the menu button. Opening and closing fade. Scroll position is restored when the menu closes.
+
+Tablet widths from 768px use two-column splits, schedules, and contact cards, and a roomier type scale. The horizontal nav still starts at 1100px. Six links do not fit beside this logo in the 768–900px band, so that range keeps the menu button.
+
+Placeholders are unchanged. No custom domain.
+
+— Sage

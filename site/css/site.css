@@ -1,24 +1,25 @@
 /*
-  MyDelta session 1 layout.
+  MyDelta layout.
   Shared header, footer, and page skeletons. Uses tokens.css only for values.
 
-  TODO session 2 — hero slider:
-  - Wire the 3 slides already in the Home markup.
-  - Manual only. No autoplay.
-  - Desktop: arrows (48px, 16px inset), dots, and the 01 / 03 counter.
-  - Mobile: no arrows, swipe threshold about 40px, dots under the photo, N / 3 chip.
-  - Keyboard Left/Right, 400–500ms, prefers-reduced-motion = instant.
+  Session 2:
+  - Hero slider is manual: previous, next, and dots, plus Left/Right keys.
+    No autoplay. Desktop arrows are 48px with a 16px inset, with the
+    01 / 03 counter in the eyebrow. Below 1100px the arrows are hidden,
+    dots sit under the photo, and an N / 3 chip sits on the photo.
+    Swipe threshold is 40px. The crossfade is 450ms, or instant when
+    prefers-reduced-motion is set.
+  - The mobile menu traps Tab, marks the page inert, closes on Escape,
+    returns focus to the toggle, and fades open and closed.
+  - From 768px the content uses tablet columns. The menu button stays
+    through 1099px. Six links do not fit beside the logo in the
+    768–900px band, so that range does not switch to a horizontal nav.
 
-  TODO session 2 — mobile menu polish:
-  - Focus trap, background inert, open/close animation.
-  - Match overlay frame 191:3267 once it is exported.
-
-  TODO session 3 — responsive pass:
-  - Spec frames are 1440 and 390 only. Tablet is undesigned.
-  - This skeleton stacks below 1100px because the nav does not fit beside
-    the logo at the suggested 768–900px switch. Revisit that breakpoint.
+  TODO session 3 — responsive polish:
+  - Spec frames are 1440 and 390 only. The tablet columns above are a working pass.
   - Match per-section wave heights (desktop 58–134px, mobile 20px).
   - Flush columns, equal photo heights, card centres lined up across sections.
+  - Match the mobile menu overlay to frame 191:3267 once it is exported.
 */
 
 *,
@@ -339,6 +340,14 @@ a {
   display: flex;
   flex-direction: column;
   gap: var(--space-24);
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  transform: none;
 }
 
 .mobile-menu[hidden] {
@@ -481,7 +490,7 @@ body.menu-open {
   gap: var(--space-12);
 }
 
-/* Hero skeleton. Slides 2 and 3 stay in the DOM, hidden, until session 2. */
+/* Hero. Three slides, manual controls, no autoplay. */
 .hero {
   background: var(--color-cream);
   padding-top: var(--space-32);
@@ -491,9 +500,33 @@ body.menu-open {
   width: min(1260px, calc(100% - (var(--side-pad) * 2)));
 }
 
+.hero__stage {
+  position: relative;
+}
+
+.hero__slides {
+  display: grid;
+}
+
+.hero__slide {
+  grid-area: 1 / 1;
+  transition: opacity 450ms ease, visibility 450ms ease;
+}
+
+.hero__slide:not(.is-active) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.hero__slide.is-active {
+  z-index: 1;
+}
+
 .hero__layout {
   display: grid;
   gap: var(--space-24);
+  height: 100%;
 }
 
 .hero__title,
@@ -532,16 +565,35 @@ body.menu-open {
   position: relative;
 }
 
+/* Controls sit on the photo. On small screens the box matches the
+   full-bleed photo so the chip and the dots can use its edges. */
+.hero__chrome {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: calc(var(--side-pad) * -1);
+  width: calc(100% + (var(--side-pad) * 2));
+  aspect-ratio: 4 / 3;
+  pointer-events: none;
+}
+
+.hero__controls {
+  position: relative;
+  height: 100%;
+}
+
 .hero__chip {
   position: absolute;
   top: var(--space-12);
   right: var(--space-12);
+  z-index: 1;
   padding: var(--space-4) var(--space-12);
   border-radius: var(--radius-full);
   background: rgba(32, 32, 32, 0.72);
   color: var(--color-white);
   font-weight: 800;
   font-size: 14px;
+  pointer-events: none;
 }
 
 .hero__arrow {
@@ -549,19 +601,32 @@ body.menu-open {
 }
 
 .hero__dots {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   gap: var(--space-8);
   margin-top: var(--space-16);
+  pointer-events: auto;
 }
 
 .hero__dots button {
+  position: relative;
   width: 12px;
   height: 12px;
   padding: 0;
   border: 0;
   border-radius: var(--radius-full);
   background: #d9d3c8;
+  cursor: pointer;
+}
+
+.hero__dots button::after {
+  content: "";
+  position: absolute;
+  inset: -12px;
 }
 
 .hero__dots button.is-active {
@@ -984,6 +1049,7 @@ th {
   .hero__layout {
     grid-template-columns: minmax(0, 600px) minmax(280px, 620px);
     justify-content: space-between;
+    column-gap: var(--space-40);
   }
 
   .hero__photo {
@@ -998,7 +1064,28 @@ th {
     display: none;
   }
 
-  .hero__media .hero__arrow {
+  .hero__chrome {
+    inset: 0;
+    left: 0;
+    width: auto;
+    aspect-ratio: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 600px) minmax(280px, 620px);
+    justify-content: space-between;
+    align-items: center;
+    column-gap: var(--space-40);
+  }
+
+  .hero__controls {
+    grid-column: 2;
+    align-self: center;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 620 / 440;
+    pointer-events: none;
+  }
+
+  .hero__arrow {
     display: grid;
     place-items: center;
     position: absolute;
@@ -1010,6 +1097,12 @@ th {
     background: var(--color-white);
     color: var(--color-slider-arrow);
     transform: translateY(-50%);
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .hero__arrow:hover {
+    color: var(--color-heading);
   }
 
   .hero__arrow--prev { left: 16px; }
@@ -1022,9 +1115,7 @@ th {
   }
 
   .hero__dots {
-    position: absolute;
-    left: 0;
-    right: 0;
+    top: auto;
     bottom: 16px;
     margin: 0;
   }
@@ -1115,10 +1206,15 @@ th {
     padding-top: 0;
   }
 
+  .hero__layout {
+    gap: 0;
+  }
+
   .hero__media {
     order: -1;
     width: calc(100% + (var(--side-pad) * 2));
     margin-left: calc(var(--side-pad) * -1);
+    margin-bottom: 44px;
   }
 
   .hero__photo {
@@ -1128,5 +1224,94 @@ th {
 
   .hero__index {
     display: none;
+  }
+}
+
+/* Tablet. Horizontal nav stays off: the six labels do not fit beside
+   the logo between 768px and 900px, and they still collide until 1100px. */
+@media (min-width: 768px) and (max-width: 1099px) {
+  :root {
+    --text-hero-size: 44px;
+    --text-hero-line: 50px;
+    --text-h2-size: 36px;
+    --text-h2-line: 42px;
+    --section-pad: var(--space-48);
+    --wave-height: 48px;
+    --side-pad: var(--space-32);
+  }
+
+  .topbar {
+    display: block;
+  }
+
+  .nav-primary {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: grid;
+  }
+
+  .navbar__inner {
+    min-height: 88px;
+  }
+
+  .logo img {
+    height: 56px;
+  }
+
+  .hero .btn,
+  .ways .btn,
+  .cta-band .btn {
+    width: auto;
+  }
+
+  .split,
+  .schedule-grid,
+  .contact-cards,
+  .location-grid,
+  .card-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+  }
+
+  .split .photo-placeholder {
+    min-height: 220px;
+  }
+
+  .trust {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-24);
+  }
+
+  .card-grid--3,
+  .hof-featured,
+  .hof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-hero {
+    padding-top: var(--space-48);
+  }
+
+  .footer-social .social-list {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1099px) {
+  .card-grid--3,
+  .hof-featured,
+  .gallery,
+  .hof-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide,
+  .mobile-menu {
+    transition: none;
+    transform: none;
   }
 }
