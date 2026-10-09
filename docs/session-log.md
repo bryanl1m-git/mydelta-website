@@ -25,7 +25,7 @@ Home hero cycles three existing slides by hand: previous, next, and dots, plus L
 
 The mobile menu traps Tab, marks the header, main, and footer inert, closes on Escape, and puts focus back on the menu button. Opening and closing fade. Scroll position is restored when the menu closes.
 
-Tablet widths from 768px use two-column splits, schedules, and contact cards, and a roomier type scale. The horizontal nav still starts at 1100px. Six links do not fit beside this logo in the 768–900px band, so that range keeps the menu button.
+Tablet widths from 768px use two-column splits, schedules, and contact cards, and a roomier type scale. Six links do not fit beside this logo in the 768–900px band, so the menu button stays until 1000px. Horizontal nav starts there, before the rest of the desktop layout at 1100px.
 
 Placeholders are unchanged. No custom domain.
 

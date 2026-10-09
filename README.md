@@ -30,7 +30,7 @@ Done: tokens, shared chrome, page skeletons, contact fallback, Pages workflow.
 
 ## Session 2
 
-Done: manual hero slider (previous, next, dots, keyboard, swipe, no autoplay), mobile menu focus trap and animation, and a tablet layout. The menu button stays from the phone width through 1099px, including 768–900px, because the six links do not fit beside the logo there.
+Done: manual hero slider (previous, next, dots, keyboard, swipe, no autoplay), mobile menu focus trap and animation, and a tablet layout. The menu button stays through 999px, including the 768–900px band, because the six links do not fit beside the logo there. Horizontal nav starts at 1000px.
 
 Still open, in the CSS header:
 

@@ -11,9 +11,9 @@
     prefers-reduced-motion is set.
   - The mobile menu traps Tab, marks the page inert, closes on Escape,
     returns focus to the toggle, and fades open and closed.
-  - From 768px the content uses tablet columns. The menu button stays
-    through 1099px. Six links do not fit beside the logo in the
-    768–900px band, so that range does not switch to a horizontal nav.
+  - From 768px the content uses tablet columns. Six links do not fit
+    beside the logo in the 768–900px band, so the menu button stays
+    until 1000px. Horizontal nav starts there.
 
   TODO session 3 — responsive polish:
   - Spec frames are 1440 and 390 only. The tablet columns above are a working pass.
@@ -1127,6 +1127,7 @@ th {
 
   .hero__dots button.is-active {
     width: 10px;
+    height: 10px;
     background: var(--color-heading);
   }
 
@@ -1227,8 +1228,8 @@ th {
   }
 }
 
-/* Tablet. Horizontal nav stays off: the six labels do not fit beside
-   the logo between 768px and 900px, and they still collide until 1100px. */
+/* Tablet. The menu button stays through 999px. Six links beside this
+   logo need about 852px in the row, and the 768–900px band is short of that. */
 @media (min-width: 768px) and (max-width: 1099px) {
   :root {
     --text-hero-size: 44px;
@@ -1305,6 +1306,25 @@ th {
   .gallery,
   .hof-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1099px) {
+  .navbar .logo,
+  .nav-primary {
+    flex: 0 0 auto;
+  }
+
+  .nav-primary {
+    display: block;
+  }
+
+  .nav-primary ul {
+    flex-wrap: nowrap;
+  }
+
+  .nav-toggle {
+    display: none;
   }
 }
 
