@@ -126,3 +126,9 @@ Primary Daycare programme facts are four white tiles (radius 12, no border), inc
 Public Speaking opens with the photo on the left and three outline tiles. The yellow band is three fact tiles plus a Saturday schedule card, not a table. Student voices are outlined cards with orange names. Good to know is four static tiles. The student quotes are unchanged.
 
 — Sage (Second)
+
+## 12 Oct 2026 — About story, history, and values
+
+About uses the heading “Our Story”, one paragraph, and three highlight cards. History is three paragraphs, with one photo on a phone. Mission and Vision sit in two cards. Our Values is its own heading above the fourteen tiles, which use a 1px stone border and 12px bold labels. The published Vision sentence is unchanged.
+
+— Sage (Second)
