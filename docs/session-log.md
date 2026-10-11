@@ -138,3 +138,9 @@ About uses the heading “Our Story”, one paragraph, and three highlight cards
 “Welcome to MyDelta” is 36px accent orange on a wide screen and 28px on a phone. The line under it is bold navy. On a phone the band is centred. The ribbon, basket, and bird artwork is not in the repo, so the yellow “35 years” circle stays until those files exist.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Waves and the visit button
+
+About, Daycare, Speaking, and Hall of Fame no longer paint an orange wave into the yellow visit band. The wave into a subpage footer is #20409A. Home keeps the #384C86 wave. The visit band’s WhatsApp button has no icon, stays on one line, and is 240px wide on a wide screen.
+
+— Sage (Second)
