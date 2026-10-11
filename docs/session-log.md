@@ -30,3 +30,19 @@ Tablet widths from 768px use two-column splits, schedules, and contact cards, an
 Placeholders are unchanged. No custom domain.
 
 — Sage
+
+## 11 Oct 2026 — Timetable amendments
+
+Primary Daycare now publishes the morning session as 7.30am – 11.15am for Year 1–3 and the afternoon session as 2.00pm – 3.45pm for Year 4–6. Who & when reads Monday – Friday. The overview line is “Daycare, homework guidance, tuition and ECA programme.” Art & craft, meals, and transport wording are gone from that page, including the Transportation and Wholesome food cards. The four remaining feature cards sit two by two on desktop and mobile.
+
+Public Speaking is Saturday only. The Sunday schedule card is removed.
+
+Header bar hours are unchanged. The desktop timetable stays side by side; stacking Morning and Afternoon full width with a 24px gap is on hold pending Bryan.
+
+— Sage (Second)
+
+## 11 Oct 2026 — Desktop timetable released
+
+The hold is released. On desktop the Primary Daycare timetable row is 1120px wide with a 24px gap: Morning is 784×123 and Afternoon is 312×123. Each period is a chip with the time in red above the activity, sized to the text and spaced across the card. The programme band is 550px tall. Below 1100px the two cards stack so the chips stay on one line. The 390px frame still uses the tables.
+
+— Sage (Second)
