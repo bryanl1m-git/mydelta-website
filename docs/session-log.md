@@ -156,3 +156,9 @@ The hero line, “Top of the class”, and “More of our stars” replace the i
 The daycare hero no longer says that pricing is absent. The Home slides no longer show a DRAFT marker. The mobile menu no longer says the social links are placeholders. The logo alt text on every page is “MyDelta Academy”. The Xiaohongshu address is unchanged.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Contact map
+
+The contact map uses the live site’s Google Maps place for 20, Jalan Mahogani 1, Bandar Botanik. The iframe is lazy, sends no referrer, and is sandboxed to the permissions Maps needs. A page policy allows frames only from Google Maps. Join Us copy is unchanged.
+
+— Sage (Second)
