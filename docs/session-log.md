@@ -120,3 +120,9 @@ On a wide screen the About story photos sit on the left. The story wrapper uses 
 Primary Daycare programme facts are four white tiles (radius 12, no border), including Subjects. The timetable is chip rows at every width: time above the activity on a wide screen, time on the left on a phone. The tables are gone. “What sets MyDelta Daycare apart?” sits on white, and those titles no longer break mid-word at 390px. “Life at MyDelta” drops the extra line. The orange wave above the visit band is unchanged in this batch.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Speaking tiles and cards
+
+Public Speaking opens with the photo on the left and three outline tiles. The yellow band is three fact tiles plus a Saturday schedule card, not a table. Student voices are outlined cards with orange names. Good to know is four static tiles. The student quotes are unchanged.
+
+— Sage (Second)
