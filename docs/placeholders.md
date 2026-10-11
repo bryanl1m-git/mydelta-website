@@ -8,7 +8,7 @@ Programme photos now come from the Figma frames and live in `site/assets/photos/
 
 ## Reviews
 
-Home "What parents say" is still a review placeholder. Public Speaking student voices use the two quotes and portraits from the Figma frame.
+Home "What parents say" uses the exported avatars and names. The quote sentences are still placeholders. Public Speaking student voices use the two quotes and portraits from the Figma frame.
 
 ## Hall of Fame
 

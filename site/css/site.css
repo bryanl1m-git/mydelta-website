@@ -1216,8 +1216,16 @@ th {
 }
 
 /* Home testimonials. Orange band, three cards, middle one highlighted.
-   The 134px flourish wave is not in the asset set, so this band uses the
-   shared 58px / 20px divider. Quotes stay labelled as placeholders. */
+   Desktop uses the 1440x134 flourish rasters. Mobile keeps the plain 20px wave.
+   Quote sentences stay labelled as placeholders. */
+.quotes {
+  position: relative;
+}
+
+.quotes__flourish {
+  display: none;
+}
+
 .quotes__intro {
   text-align: center;
 }
@@ -1266,10 +1274,10 @@ th {
 
 .quotes__mark {
   display: block;
-  width: 34px;
-  height: 27px;
+  width: 30px;
+  height: 24px;
   margin-bottom: 12px;
-  fill: var(--color-heading);
+  object-fit: contain;
 }
 
 .band--orange .quotes__card p {
@@ -1289,15 +1297,12 @@ th {
 }
 
 .quotes__avatar {
-  display: grid;
+  display: block;
+  flex: 0 0 auto;
   width: 48px;
   height: 48px;
-  place-items: center;
   border-radius: 50%;
-  background: var(--color-white);
-  color: var(--color-heading);
-  font-weight: 800;
-  font-size: 18px;
+  object-fit: cover;
 }
 
 .quotes__name {
@@ -1669,10 +1674,40 @@ th {
     min-width: 0;
   }
 
+  .quotes.curve-to-white {
+    background-image: none;
+    padding-top: 164px;
+    padding-bottom: 134px;
+  }
+
+  .band--cream.curve-to-orange {
+    background-image: none;
+    padding-bottom: var(--section-pad);
+  }
+
+  .quotes__flourish {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    height: 134px;
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  .quotes__flourish--top { top: 0; }
+  .quotes__flourish--bottom { bottom: 0; }
+
   .quotes__card {
     min-height: 231px;
     padding: 46px 36px 50px;
     border-radius: 44px;
+  }
+
+  .quotes__mark {
+    width: 34px;
+    height: 27px;
   }
 
   .band--orange .quotes__card p {
