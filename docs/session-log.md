@@ -63,4 +63,6 @@ The all-stars grid no longer forces two 204px cards onto a 390px screen. Cards c
 
 About Us values are white tiles: 2px #FFDD98 border, 12px radius, Nunito 600. Mobile is 15px type in a 165×82 two-column grid. Desktop is 18px type, seven across, 150×132.
 
+The same tile treatment now covers Primary Daycare “What sets us apart” (2px border, 20px padding, two columns) and Public Speaking “What students gain” (1.5px border, 22px padding, two columns below 1100px and three on desktop). Titles are Nunito 700 at 18px and the body is 15px #595966.
+
 — Sage (Second)
