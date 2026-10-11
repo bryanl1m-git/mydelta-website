@@ -474,6 +474,17 @@ body.menu-open {
   background: #0e756a;
 }
 
+.btn--navy {
+  background: var(--color-heading);
+  border-radius: var(--radius-whatsapp);
+}
+
+.btn--navy:hover,
+.btn--navy:active {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
 .band--orange .btn--accent {
   background: var(--color-white);
   color: var(--color-accent);
@@ -1324,8 +1335,18 @@ th {
   text-align: center;
 }
 
+.cta-band h2 {
+  color: var(--color-heading);
+}
+
+.cta-band p {
+  color: var(--color-body);
+  font-weight: 400;
+}
+
 .cta-band .btn-row {
   justify-content: center;
+  gap: 16px;
 }
 
 /* Contact */
@@ -1382,25 +1403,67 @@ th {
   color: var(--color-heading);
 }
 
-/* Footer */
-.footer-social {
-  background: var(--color-cream);
-  padding: var(--space-32) 0 var(--space-16);
-  text-align: center;
+/* Footer. Home is #384C86. Subpages are #20409A. The home hours
+   and social row is the 390 frame only. */
+.footer-home {
+  display: none;
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 32px 24px 16px;
+}
+
+.page-home .footer-home {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+}
+
+.footer-home__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.footer-home__row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.footer-home .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.footer-home .social-list--circles .social-link {
+  background: #0d2659;
 }
 
 .site-footer .footer-bar {
+  background: var(--color-heading);
+}
+
+.page-home .site-footer .footer-bar {
   background: var(--color-navy);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-bar p {
   margin: 0;
-  padding: var(--space-24) var(--space-16) var(--space-32);
+  padding: 28px 16px;
   color: var(--color-white);
   font-family: var(--font-footer);
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 26px;
   text-align: center;
 }
 
@@ -1733,8 +1796,20 @@ th {
     display: none;
   }
 
-  .footer-social .social-list {
+  .cta-band .btn {
+    width: 240px;
+  }
+
+  .page-home .footer-home {
     display: none;
+  }
+
+  .page-home .site-footer .footer-bar {
+    border-top: 0;
+  }
+
+  .page-home .footer-bar p {
+    padding: 27px 16px;
   }
 
   .hero .btn,
@@ -1858,9 +1933,6 @@ th {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .footer-social .social-list {
-    display: none;
-  }
 }
 
 @media (min-width: 900px) and (max-width: 1099px) {
