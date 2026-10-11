@@ -1045,7 +1045,6 @@ th {
 }
 
 .contact-cards,
-.enquiry,
 .location-grid {
   text-align: left;
 }
@@ -1084,43 +1083,6 @@ th {
 
 .map-placeholder a {
   color: var(--color-heading);
-  font-weight: 800;
-}
-
-.enquiry {
-  max-width: 640px;
-  margin: var(--space-32) auto 0;
-  text-align: left;
-}
-
-.field {
-  display: grid;
-  gap: var(--space-8);
-  margin-bottom: var(--space-16);
-}
-
-.field span {
-  font-weight: 800;
-  color: var(--color-heading);
-}
-
-.field input,
-.field select {
-  width: 100%;
-  padding: 14px var(--space-16);
-  border: 1px solid #e4dccb;
-  border-radius: var(--radius-tile);
-  background: var(--color-white);
-  color: var(--color-body);
-  font: inherit;
-}
-
-.form-hint,
-.form-status {
-  font-size: 15px;
-}
-
-.form-status a {
   font-weight: 800;
 }
 
