@@ -4,15 +4,15 @@ Swap these in the HTML sources under `src/`, then run `python3 scripts/assemble_
 
 ## Photos
 
-Every block with the class `photo-placeholder` is a stand-in. That includes the three hero slides, Our Story, What We Do, both galleries, Life at MyDelta, and the Hall of Fame portraits. Do not add a photo of a child until Bryan approves it.
+Programme photos now come from the Figma frames and live in `site/assets/photos/`. The contact map is still a `photo-placeholder`. Home parent reviews are still labelled placeholders. Primary Tuition, FAQ, Explore more, and the contact form are not given photos.
 
 ## Reviews
 
-Home "What parents say" and Public Speaking "Student voices" are labelled review placeholders. They are not the current site's quotes, and they do not use parent or student names.
+Home "What parents say" is still a review placeholder. Public Speaking student voices use the two quotes and portraits from the Figma frame.
 
 ## Hall of Fame
 
-Three featured cards and five grid cards. Each one says "No student name" and "Result placeholder". No year is shown. The real cohort is not copied into this repo.
+Three featured cards and the nineteen grid cards from the Figma frame, with the portrait, result, name, and school on each. No year is shown.
 
 ## Map
 
