@@ -58,3 +58,9 @@ Band colours use background-color, so the wave image stays. Desktop bands use th
 The all-stars grid no longer forces two 204px cards onto a 390px screen. Cards can shrink, and the mobile gap is 12px so two columns fit inside the 342px content width.
 
 — Sage (Second)
+
+## 11 Oct 2026 — Subpage value tiles
+
+About Us values are white tiles: 2px #FFDD98 border, 12px radius, Nunito 600. Mobile is 15px type in a 165×82 two-column grid. Desktop is 18px type, seven across, 150×132.
+
+— Sage (Second)
