@@ -150,3 +150,9 @@ About, Daycare, Speaking, and Hall of Fame no longer paint an orange wave into t
 The hero line, “Top of the class”, and “More of our stars” replace the internal standout notes. Card text is centred, photos are square, and the last row is centred. Section headings stay left aligned. The “More of our stars” band is white.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Visible notes
+
+The daycare hero no longer says that pricing is absent. The Home slides no longer show a DRAFT marker. The mobile menu no longer says the social links are placeholders. The logo alt text on every page is “MyDelta Academy”. The Xiaohongshu address is unchanged.
+
+— Sage (Second)
