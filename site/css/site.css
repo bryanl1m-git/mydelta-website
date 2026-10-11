@@ -845,7 +845,8 @@ body.menu-open {
 
 /* Daycare "What sets us apart" and Public Speaking benefits.
    White tiles, yellow border, radius 12. Other cards stay as they are. */
-.tile-grid .card {
+.tile-grid .card,
+.section.band--white .tile-grid .card {
   min-width: 0;
   background: var(--color-white);
   border: 2px solid #ffdd98;
