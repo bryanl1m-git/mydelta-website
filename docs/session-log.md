@@ -78,3 +78,9 @@ The same tile treatment now covers Primary Daycare “What sets us apart” (2px
 Programme photos replace the dashed placeholders: hero crops, Our Story, the What We Do collage, the home gallery, the lounge on Home, About, daycare, public speaking, and the Hall of Fame cohort. The collage and lounge keep the rounded frame that is already in the PNG. Hero slides stay at the native crop size. The contact map is still a placeholder, and Primary Tuition, FAQ, Explore more, and the contact form have no photos.
 
 — Sage (Second)
+
+## 11 Oct 2026 — Subpage hero type
+
+Subpage heroes use the Figma type: on a 390px screen the eyebrow is 12px, the heading is 36px (40px on Contact), and the line under it is 15px regular. At 1440 the eyebrow is 14px, the heading is 56px, and the line is 18px regular. The Hall of Fame description no longer says the page is still a placeholder. Each portrait alt is “Portrait of” plus the name already printed on that card.
+
+— Sage (Second)

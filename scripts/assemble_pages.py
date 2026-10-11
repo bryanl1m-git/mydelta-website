@@ -57,7 +57,7 @@ PAGES_META = (
         "hall-of-fame.html",
         "hof",
         "Hall of Fame",
-        "Hall of Fame placeholders. No student names, photos, or results yet.",
+        "The Hall of Fame for students from MyDelta in Bandar Botanik, Klang.",
     ),
     (
         "contact.html",
