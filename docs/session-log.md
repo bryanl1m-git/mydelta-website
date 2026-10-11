@@ -168,3 +168,9 @@ The contact map uses the live site’s Google Maps place for 20, Jalan Mahogani 
 The hidden label on each social link is the network name only: Facebook, Instagram, TikTok, or Xiaohongshu. The Xiaohongshu address is unchanged.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Welcome circle and gallery heading
+
+The yellow “35 years” circle is gone from the Home welcome band. The Home gallery heading is centred. The words stay “Gallery”, and the other headings stay left aligned.
+
+— Sage (Second)
