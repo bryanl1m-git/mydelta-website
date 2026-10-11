@@ -87,7 +87,7 @@ Subpage heroes use the Figma type: on a 390px screen the eyebrow is 12px, the he
 
 ## 11 Oct 2026 — Home testimonials
 
-The Home parent band is orange, with three cards and a highlighted middle card. The quotes stay marked as placeholders. The parent photos are not in the repo, and Figma could not be exported from this environment. The circles are initials until those frames are exported.
+The Home parent band is orange, with three cards and a highlighted middle card. The quote sentences stay marked as placeholders. The circles use the exported avatars for Emily Song, Joelyn Chong, and Amanda Wyt, at 80px on a wide screen and 48px on a phone. The 1440×134 flourish sits on the top and bottom of that band on a wide screen. A phone keeps the plain 20px wave.
 
 — Sage (Second)
 
@@ -99,7 +99,7 @@ Subpage pages end on a yellow visit band. Enquire stays accent, and WhatsApp Us 
 
 ## 11 Oct 2026 — Home hero
 
-The Home hero type follows the 390 and 1440 frames: a white eyebrow pill and a 32px heading on a phone, and a 16px eyebrow, 52px heading, and bold 20px line on a wide screen. The trust row is white, with 16px bold type. The three offers sit in a plain row, without the cream cards. The offer icons are not in the repo, so that row has no icon tiles.
+The Home hero type follows the 390 and 1440 frames: a white eyebrow pill and a 32px heading on a phone, and a 16px eyebrow, 52px heading, and bold 20px line on a wide screen. The trust row is white, with 16px bold type. The three offers sit in a plain row, without the cream cards. Each offer uses its exported icon at 64px on a phone and 88px on a wide screen.
 
 — Sage (Second)
 
