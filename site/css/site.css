@@ -874,6 +874,14 @@ body.menu-open {
     margin-bottom: 36px;
   }
 
+  .fact-grid.fact-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .fact-grid.fact-grid--3 .fact-tile:last-child {
+    grid-column: auto;
+  }
+
   .fact-tile {
     min-height: 149px;
   }
@@ -1027,6 +1035,49 @@ body.menu-open {
     font-size: 15px;
     line-height: 20px;
   }
+
+  .schedule-rows__time {
+    flex-basis: 108px;
+  }
+}
+
+@media (min-width: 1100px) {
+  body.page-speaking #glance-heading,
+  body.page-speaking #schedule-heading,
+  body.page-speaking #gain-heading,
+  body.page-speaking #voices-heading,
+  body.page-speaking #speaking-gallery-heading,
+  body.page-speaking #know-heading {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  #speaking-overview-heading {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .voice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .voice-card {
+    min-height: 160px;
+    padding: 26px 22px;
+  }
+
+  .voice-card .voice-photo {
+    flex-basis: 96px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .know-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 28px;
+  }
 }
 
 .tile-grid .card p {
@@ -1138,6 +1189,164 @@ body.menu-open {
   background: var(--color-white);
   border: 0;
   background-image: none;
+}
+
+.speaking-overview-split .speaking-overview {
+  order: 2;
+}
+
+.speaking-lead {
+  color: var(--color-heading);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.speaking-points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.outline-tile {
+  min-width: 0;
+  background: var(--color-white);
+  border: 1.5px solid #ffdd98;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.outline-tile--roomy {
+  padding: 20px 22px;
+}
+
+.outline-tile h3 {
+  margin: 0 0 4px;
+  color: var(--color-heading);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.outline-tile p {
+  margin: 0;
+  color: #595966;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.fact-grid--3 .fact-tile:last-child {
+  grid-column: 1 / -1;
+}
+
+.schedule-card {
+  box-sizing: border-box;
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.schedule-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 28px;
+}
+
+.schedule-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.schedule-rows li {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  min-width: 0;
+}
+
+.schedule-rows__time {
+  flex: 0 0 130px;
+  color: var(--color-heading);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.schedule-rows__text {
+  color: var(--color-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.voice-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.voice-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0;
+  padding: 20px;
+  background: var(--color-white);
+  border: 1.5px solid #ffdd98;
+  border-radius: 12px;
+}
+
+.voice-card .voice-photo {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  margin: 0;
+}
+
+.voice-card p {
+  margin: 0 0 8px;
+  color: var(--color-heading);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.voice-card footer {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.know-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.tile-grid--speaking .card h3 {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.tile-grid--speaking .card p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (max-width: 767px) {
+  .tile-grid--speaking .card h3 {
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
 
 .placeholder-label {
@@ -1723,9 +1932,17 @@ th {
     grid-template-columns: minmax(0, 1fr) 547px;
   }
 
-  .split:has(> .daycare-overview),
-  .split:has(> .speaking-overview) {
+  .split:has(> .daycare-overview) {
     grid-template-columns: minmax(0, 1fr) 536px;
+  }
+
+  .split.speaking-overview-split {
+    grid-template-columns: 536px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .speaking-overview-split .speaking-overview {
+    order: 0;
   }
 
   .home-story { aspect-ratio: 550 / 434; border-radius: 38px; }
