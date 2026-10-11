@@ -132,3 +132,9 @@ Public Speaking opens with the photo on the left and three outline tiles. The ye
 About uses the heading “Our Story”, one paragraph, and three highlight cards. History is three paragraphs, with one photo on a phone. Mission and Vision sit in two cards. Our Values is its own heading above the fourteen tiles, which use a 1px stone border and 12px bold labels. The published Vision sentence is unchanged.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Home welcome band
+
+“Welcome to MyDelta” is 36px accent orange on a wide screen and 28px on a phone. The line under it is bold navy. On a phone the band is centred. The ribbon, basket, and bird artwork is not in the repo, so the yellow “35 years” circle stays until those files exist.
+
+— Sage (Second)
