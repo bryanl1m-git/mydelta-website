@@ -96,3 +96,9 @@ The Home parent band is orange, with three cards and a highlighted middle card. 
 Subpage pages end on a yellow visit band. Enquire stays accent, and WhatsApp Us is navy. Home ends on the yellow Join Us band, with the lounge photo, and has no visit band. The footer bar is #384C86 on Home and #20409A on the other pages. On a 390px Home screen the footer also shows hours, the WhatsApp number, and the social circles.
 
 — Sage (Second)
+
+## 11 Oct 2026 — Home hero
+
+The Home hero type follows the 390 and 1440 frames: a white eyebrow pill and a 32px heading on a phone, and a 16px eyebrow, 52px heading, and bold 20px line on a wide screen. The trust row is white, with 16px bold type. The three offers sit in a plain row, without the cream cards. The offer icons are not in the repo, so that row has no icon tiles.
+
+— Sage (Second)
