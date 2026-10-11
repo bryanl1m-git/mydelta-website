@@ -11,10 +11,10 @@
               <a class="btn btn--whatsapp" href="{{WHATSAPP}}">{{ICON:whatsapp}} WhatsApp us to enquire</a>
             </div>
             <div class="hero__media">
-              <div class="photo-placeholder hero__photo">
-                <span class="placeholder-label">Photo placeholder</span>
-                <p>Hero photo pending. No student photo is stored here.</p>
-              </div>
+              <picture>
+                <source media="(max-width: 1099px)" srcset="assets/photos/home-hero-1-crop-mobile.jpg">
+                <img class="hero__photo" src="assets/photos/home-hero-1-crop-desktop.jpg" alt="A teacher helping two students at a desk" width="535" height="380" style="--hero-native: 535px; --hero-native-m: 507px; --hero-ratio: 535 / 380">
+              </picture>
             </div>
           </div>
         </article>
@@ -28,10 +28,10 @@
               <a class="btn btn--whatsapp" href="{{WHATSAPP}}">{{ICON:whatsapp}} WhatsApp us to enquire</a>
             </div>
             <div class="hero__media">
-              <div class="photo-placeholder hero__photo">
-                <span class="placeholder-label">Photo placeholder</span>
-                <p>Slide 2 photo pending.</p>
-              </div>
+              <picture>
+                <source media="(max-width: 1099px)" srcset="assets/photos/home-hero-2-crop-mobile.jpg">
+                <img class="hero__photo" src="assets/photos/home-hero-2-crop-desktop.jpg" alt="Students reading at a classroom table" width="499" height="354" style="--hero-native: 499px; --hero-native-m: 472px; --hero-ratio: 499 / 354">
+              </picture>
             </div>
           </div>
         </article>
@@ -44,10 +44,10 @@
               <a class="btn btn--whatsapp" href="{{WHATSAPP}}">{{ICON:whatsapp}} WhatsApp us to enquire</a>
             </div>
             <div class="hero__media">
-              <div class="photo-placeholder hero__photo">
-                <span class="placeholder-label">Photo placeholder</span>
-                <p>Slide 3 photo pending.</p>
-              </div>
+              <picture>
+                <source media="(max-width: 1099px)" srcset="assets/photos/home-hero-3-crop-mobile.jpg">
+                <img class="hero__photo" src="assets/photos/home-hero-3-crop-desktop.jpg" alt="A class listening to a speaker at the front of the room" width="507" height="360" style="--hero-native: 507px; --hero-native-m: 480px; --hero-ratio: 507 / 360">
+              </picture>
             </div>
           </div>
         </article>
@@ -135,10 +135,7 @@
       <p>MyDelta has 35 years in education, in Bandar Botanik, Klang.</p>
       <a class="btn btn--accent" href="about.html">Learn More</a>
     </div>
-    <div class="photo-placeholder">
-      <span class="placeholder-label">Photo placeholder</span>
-      <p>Our Story photo pending.</p>
-    </div>
+    <img class="frame-photo home-story" src="assets/photos/home-our-story.jpg" alt="A teacher with a group of students outdoors" width="579" height="457">
   </div>
 </section>
 
@@ -153,10 +150,7 @@
         <li>Quality Education</li>
       </ul>
     </div>
-    <div class="photo-placeholder">
-      <span class="placeholder-label">Photo placeholder</span>
-      <p>Classroom photo pending.</p>
-    </div>
+    <img class="photo-baked home-collage" src="assets/photos/home-whatwedo-collage.png" alt="A collage of students learning at MyDelta" width="591" height="555">
   </div>
 </section>
 
@@ -187,16 +181,27 @@
 <section class="section band band--white curve-to-orange" aria-labelledby="gallery-heading">
   <div class="wrap">
     <h2 id="gallery-heading">Gallery</h2>
-    <p>Photo placeholders only. Originals are still to come, and no child’s photo is in this set.</p>
     <div class="gallery">
-      <div class="photo-placeholder"><span class="placeholder-label">Photo placeholder</span></div>
-      <div class="photo-placeholder"><span class="placeholder-label">Photo placeholder</span></div>
-      <div class="photo-placeholder"><span class="placeholder-label">Photo placeholder</span></div>
-      <div class="photo-placeholder"><span class="placeholder-label">Photo placeholder</span></div>
-      <div class="photo-placeholder"><span class="placeholder-label">Photo placeholder</span></div>
-      <div class="photo-placeholder"><span class="placeholder-label">Photo placeholder</span></div>
+      <img class="frame-photo gallery__photo" src="assets/photos/home-gallery-1.jpg" alt="Students working together in class" width="600" height="450">
+      <img class="frame-photo gallery__photo" src="assets/photos/home-gallery-2.jpg" alt="A lesson in the MyDelta classroom" width="600" height="450">
+      <img class="frame-photo gallery__photo" src="assets/photos/home-gallery-3.jpg" alt="Children at a classroom table" width="600" height="450">
+      <img class="frame-photo gallery__photo" src="assets/photos/home-gallery-4.jpg" alt="Students during a group activity" width="600" height="450">
+      <img class="frame-photo gallery__photo" src="assets/photos/home-gallery-5.jpg" alt="A teacher with students in class" width="600" height="450">
+      <img class="frame-photo gallery__photo" src="assets/photos/home-gallery-6.jpg" alt="Students in a MyDelta session" width="600" height="450">
     </div>
   </div>
 </section>
 
-{{CTA}}
+<section class="section band band--orange curve-to-cream" aria-labelledby="cta-heading">
+  <div class="wrap split">
+    <div>
+      <h2 id="cta-heading">Come see MyDelta for yourself</h2>
+      <p>Visit the centre in Bandar Botanik, Klang. Mon–Fri, 8:00 am – 6:00 pm.</p>
+      <div class="btn-row">
+        <a class="btn btn--accent" href="contact.html">Enquire</a>
+        <a class="btn btn--whatsapp" href="{{WHATSAPP}}">{{ICON:whatsapp}} WhatsApp Us</a>
+      </div>
+    </div>
+    <img class="photo-baked join-lounge__photo" src="assets/photos/home-join-lounge.png" alt="The MyDelta lounge" width="547" height="428">
+  </div>
+</section>

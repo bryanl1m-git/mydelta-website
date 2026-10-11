@@ -66,3 +66,9 @@ About Us values are white tiles: 2px #FFDD98 border, 12px radius, Nunito 600. Mo
 The same tile treatment now covers Primary Daycare “What sets us apart” (2px border, 20px padding, two columns) and Public Speaking “What students gain” (1.5px border, 22px padding, two columns below 1100px and three on desktop). Titles are Nunito 700 at 18px and the body is 15px #595966.
 
 — Sage (Second)
+
+## 11 Oct 2026 — Figma photos
+
+Programme photos replace the dashed placeholders: hero crops, Our Story, the What We Do collage, the home gallery, the lounge on Home, About, daycare, public speaking, and the Hall of Fame cohort. The collage and lounge keep the rounded frame that is already in the PNG. Hero slides stay at the native crop size. The contact map is still a placeholder, and Primary Tuition, FAQ, Explore more, and the contact form have no photos.
+
+— Sage (Second)
