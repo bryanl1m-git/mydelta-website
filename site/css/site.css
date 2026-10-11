@@ -1078,24 +1078,51 @@ body.menu-open {
   text-align: center;
 }
 
+/* Subpage heroes. Mobile matches the 390 frames: eyebrow 12, H1 36
+   (Contact 40), sub 15 regular. Desktop is 14 / 56 / 18. */
 .page-hero {
   background-color: var(--color-yellow-band);
   text-align: center;
-  padding: var(--space-48) var(--space-24) var(--space-32);
+  padding: 40px var(--space-24) 32px;
 }
 
 .page-hero.curve-to-white,
 .page-hero.curve-to-navy {
-  padding-bottom: calc(var(--space-48) + var(--wave-height));
+  padding-bottom: calc(32px + var(--wave-height));
+}
+
+.page-hero .wrap {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+
+.page-hero .eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 16px;
 }
 
 .page-hero h1 {
-  margin-bottom: var(--space-12);
+  margin: 0;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.page-hero--contact h1 {
+  font-size: 40px;
 }
 
 .page-hero p {
-  margin-bottom: 0;
-  font-weight: 700;
+  margin: 0;
+  max-width: 342px;
+  color: var(--color-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
 }
 
 .table-wrap {
@@ -1478,8 +1505,39 @@ th {
   }
 
   .page-hero {
-    min-height: var(--page-hero-min);
-    padding-top: var(--space-48);
+    min-height: calc(256px + var(--wave-height));
+    padding-top: 72px;
+  }
+
+  .page-hero.curve-to-white,
+  .page-hero.curve-to-navy {
+    padding-bottom: calc(40px + var(--wave-height));
+  }
+
+  .page-hero .wrap {
+    gap: 12px;
+  }
+
+  .page-hero .eyebrow {
+    font-size: 14px;
+    letter-spacing: 1.12px;
+    line-height: 20px;
+  }
+
+  .page-hero--contact .eyebrow {
+    letter-spacing: 1.2px;
+  }
+
+  .page-hero h1,
+  .page-hero--contact h1 {
+    font-size: 56px;
+    line-height: 76px;
+  }
+
+  .page-hero p {
+    max-width: 900px;
+    font-size: 18px;
+    line-height: 26px;
   }
 
   .footer-social .social-list {
@@ -1605,10 +1663,6 @@ th {
   .hof-featured,
   .hof-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .page-hero {
-    padding-top: var(--space-48);
   }
 
   .footer-social .social-list {
