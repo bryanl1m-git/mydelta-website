@@ -84,3 +84,9 @@ Programme photos replace the dashed placeholders: hero crops, Our Story, the Wha
 Subpage heroes use the Figma type: on a 390px screen the eyebrow is 12px, the heading is 36px (40px on Contact), and the line under it is 15px regular. At 1440 the eyebrow is 14px, the heading is 56px, and the line is 18px regular. The Hall of Fame description no longer says the page is still a placeholder. Each portrait alt is “Portrait of” plus the name already printed on that card.
 
 — Sage (Second)
+
+## 11 Oct 2026 — Home testimonials
+
+The Home parent band is orange, with three cards and a highlighted middle card. The quotes and names are the Figma copy: Emily Song, Joelyn Chong, and Amanda Wyt. The circles use the exported avatars, at 80px on a wide screen and 48px on a phone. The 1440×134 flourish sits on the top and bottom of that band on a wide screen. A phone keeps the plain 20px wave.
+
+— Sage (Second)
