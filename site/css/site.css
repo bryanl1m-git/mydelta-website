@@ -1136,8 +1136,10 @@ body.menu-open {
 
 .value-list li {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   min-width: 0;
   min-height: 82px;
   padding: 12px 10px;
@@ -1149,6 +1151,20 @@ body.menu-open {
   font-size: 15px;
   line-height: 1.25;
   text-align: center;
+}
+
+.value-icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffdd98;
+}
+
+.value-icon img {
+  width: 16.8px;
+  height: 16.8px;
 }
 
 /* Subpage heroes. Mobile matches the 390 frames: eyebrow 12, H1 36
@@ -1848,6 +1864,16 @@ th {
     min-height: 132px;
     font-size: 18px;
     line-height: 1.2;
+  }
+
+  .value-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .value-icon img {
+    width: 24px;
+    height: 24px;
   }
 
   .page-hero {
