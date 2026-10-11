@@ -58,3 +58,9 @@ Primary Tuition, the Public Speaking FAQ, Explore more, and the contact registra
 Band colours use background-color, so the wave image stays. Desktop bands use the traced 58px divider and mobile uses the 20px vector. Page heroes use the same pair. Nunito 600 is on the Google Fonts link.
 
 — Sage (Second)
+
+## 11 Oct 2026 — Hall of Fame mobile
+
+The all-stars grid no longer forces two 204px cards onto a 390px screen. Cards can shrink, and the mobile gap is 12px so two columns fit inside the 342px content width.
+
+— Sage (Second)

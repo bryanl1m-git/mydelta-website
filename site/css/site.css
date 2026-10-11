@@ -791,6 +791,10 @@ body.menu-open {
 }
 
 @media (max-width: 767px) {
+  .hof-grid {
+    gap: 12px;
+  }
+
   .card-grid--pairs {
     gap: var(--space-12);
   }
@@ -1007,19 +1011,27 @@ th {
 }
 
 .hof-grid {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .hof-card {
+  min-width: 0;
   padding: var(--space-12);
   border-radius: var(--radius-card);
   background: var(--color-white);
 }
 
 .hof-card__photo {
+  width: 100%;
+  min-height: 0;
   aspect-ratio: 1;
   border-radius: var(--radius-tile);
   margin-bottom: var(--space-12);
+}
+
+.hof-card p,
+.hof-card .placeholder-label {
+  overflow-wrap: anywhere;
 }
 
 .hof-card p {
