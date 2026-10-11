@@ -108,3 +108,9 @@ The Home hero type follows the 390 and 1440 frames: a white eyebrow pill and a 3
 On a wide screen, subpage sections use 48px of padding instead of 64px. Home stays on 64px. The content width stays 1120px, and the wave still sits inside the section padding.
 
 — Sage (Second)
+
+## 11 Oct 2026 — About and Contact
+
+On a wide screen the About story photos sit on the left. The story wrapper uses the same indent as the other sections. The vision card is cream and the mission card is navy. “Our Vision” and “Our Mission” are visible 24px headings: the vision title is accent orange, and the mission title is white. Contact reach cards are cream with a 12px radius and a 1px border. The map placeholder is a Google Maps embed of the Bandar Botanik address, 280px tall on a phone and 240px tall on a wide screen. Each value tile has its exported icon on a #FFDD98 circle, 24px on a wide screen and 16.8px on a phone.
+
+— Sage (Second)

@@ -4,7 +4,7 @@ Swap these in the HTML sources under `src/`, then run `python3 scripts/assemble_
 
 ## Photos
 
-Programme photos now come from the Figma frames and live in `site/assets/photos/`. The contact map is still a `photo-placeholder`. Primary Tuition, FAQ, Explore more, and the contact form are not given photos.
+Programme photos now come from the Figma frames and live in `site/assets/photos/`. Primary Tuition, FAQ, Explore more, and the contact form are not given photos.
 
 ## Reviews
 
@@ -16,7 +16,7 @@ Three featured cards and the nineteen grid cards from the Figma frame, with the 
 
 ## Map
 
-The contact page shows a map placeholder that links to a public Google Maps search. There is no maps API key.
+The contact page embeds a Google Map for the Bandar Botanik address. There is no maps API key.
 
 ## Social
 
