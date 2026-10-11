@@ -144,3 +144,9 @@ About uses the heading “Our Story”, one paragraph, and three highlight cards
 About, Daycare, Speaking, and Hall of Fame no longer paint an orange wave into the yellow visit band. The wave into a subpage footer is #20409A. Home keeps the #384C86 wave. The visit band’s WhatsApp button has no icon, stays on one line, and is 240px wide on a wide screen.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Hall of Fame headings
+
+The hero line, “Top of the class”, and “More of our stars” replace the internal standout notes. Card text is centred, photos are square, and the last row is centred. Section headings stay left aligned. The “More of our stars” band is white.
+
+— Sage (Second)
