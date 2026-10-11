@@ -46,3 +46,9 @@ Header bar hours are unchanged. The desktop timetable stays side by side; stacki
 The hold is released. On desktop the Primary Daycare timetable row is 1120px wide with a 24px gap: Morning is 784×123 and Afternoon is 312×123. Each period is a chip with the time in red above the activity, sized to the text and spaced across the card. The programme band is 550px tall. Below 1100px the two cards stack so the chips stay on one line. The 390px frame still uses the tables.
 
 — Sage (Second)
+
+## 11 Oct 2026 — Wavy dividers
+
+Band colours use background-color, so the wave image stays. Desktop bands use the traced 58px divider and mobile uses the 20px vector. Page heroes use the same pair. Nunito 600 is on the Google Fonts link.
+
+— Sage (Second)
