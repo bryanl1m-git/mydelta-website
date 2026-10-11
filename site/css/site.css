@@ -794,7 +794,12 @@ body.menu-open {
 
 @media (max-width: 767px) {
   .hof-grid {
-    gap: 12px;
+    gap: 14px;
+  }
+
+  .hof-featured .hof-card {
+    width: calc(100% - 1px);
+    justify-self: center;
   }
 
   .card-grid--pairs {
@@ -915,7 +920,7 @@ body.menu-open {
   /* The crop files already match the Figma frames, so they are not covered again. */
   object-fit: fill;
   aspect-ratio: 4 / 3;
-  /* Provisional mobile radius. The confirmed desktop radius is 38. */
+  /* Mobile hero is full-bleed with no radius. Desktop radius is 38. */
   border-radius: 0;
   min-height: 0;
 }
@@ -925,8 +930,10 @@ body.menu-open {
   display: block;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   height: auto;
   object-fit: cover;
+  object-position: center;
 }
 
 .photo-baked {
@@ -935,15 +942,17 @@ body.menu-open {
   background: transparent;
 }
 
+/* Mobile sizes are the 390 frame. Desktop overrides sit at 1100px.
+   Boxes stay at or under each file's pixel size, so nothing is upscaled. */
 .home-story { aspect-ratio: 342 / 256; border-radius: 20px; }
-.home-collage { aspect-ratio: 591 / 555; }
-.join-lounge__photo { aspect-ratio: 547 / 428; }
+.home-collage { aspect-ratio: 342 / 321; }
+.join-lounge__photo { aspect-ratio: 342 / 268; }
+.gallery:not(.gallery--trio) { gap: 12px; }
 .gallery__photo { aspect-ratio: 165 / 124; border-radius: 12px; }
 .overview-photo { aspect-ratio: 342 / 220; border-radius: 12px; }
 .about-story,
-.about-mission,
-.history-photo { aspect-ratio: 342 / 200; border-radius: 16px; }
-.history-photo { aspect-ratio: 342 / 220; }
+.about-mission { aspect-ratio: 342 / 200; border-radius: 16px; }
+.history-photo { aspect-ratio: 342 / 220; border-radius: 16px; }
 
 .photo-stack,
 .history-photos {
@@ -955,11 +964,11 @@ body.menu-open {
 
 .gallery.gallery--trio {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 10px;
 }
 
 .gallery.gallery--trio .gallery__photo {
-  aspect-ratio: 107 / 140;
+  aspect-ratio: 322 / 420;
   border-radius: 12px;
 }
 
@@ -1129,8 +1138,10 @@ th {
 
 .hof-card {
   min-width: 0;
-  padding: var(--space-12);
-  border-radius: var(--radius-card);
+  padding: 0 0 16px;
+  border: 1.5px solid #ffecc7;
+  border-radius: 12px;
+  overflow: hidden;
   background: var(--color-white);
 }
 
@@ -1140,11 +1151,14 @@ th {
   max-width: 100%;
   height: auto;
   min-height: 0;
-  aspect-ratio: 1;
   object-fit: cover;
+  object-position: center;
   border-radius: 0;
   margin-bottom: var(--space-12);
 }
+
+.hof-featured .hof-card__photo { aspect-ratio: 339 / 342; }
+.hof-grid .hof-card__photo { aspect-ratio: 162 / 165; }
 
 .hof-result {
   font-weight: 800;
@@ -1167,6 +1181,7 @@ th {
 
 .hof-card p {
   margin: 0;
+  padding-inline: 12px;
 }
 
 .hof-note {
@@ -1348,16 +1363,39 @@ th {
     border-radius: var(--radius-photo);
   }
 
+  .split:has(> .home-story),
+  .split:has(> .home-collage) {
+    grid-template-columns: minmax(0, 1fr) 550px;
+  }
+
+  .split:has(> .join-lounge__photo) {
+    grid-template-columns: minmax(0, 1fr) 547px;
+  }
+
+  .split:has(> .daycare-overview),
+  .split:has(> .speaking-overview) {
+    grid-template-columns: minmax(0, 1fr) 536px;
+  }
+
   .home-story { aspect-ratio: 550 / 434; border-radius: 38px; }
-  .gallery__photo { aspect-ratio: 353 / 265; border-radius: 20px; }
+  .home-collage { aspect-ratio: 550 / 516; }
+  .join-lounge__photo { aspect-ratio: 547 / 428; }
+  .gallery:not(.gallery--trio) { gap: 30.5px; }
+  .gallery__photo { aspect-ratio: 1059 / 795; border-radius: 20px; }
   .daycare-overview { aspect-ratio: 536 / 481; }
   .speaking-overview { aspect-ratio: 536 / 464; }
   .about-story,
   .about-mission { aspect-ratio: 540 / 260; border-radius: 24px; }
-  .history-photo { aspect-ratio: 363 / 300; border-radius: 24px; }
+  .history-photo { aspect-ratio: 1088 / 900; border-radius: 24px; }
   .history-photos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .gallery.gallery--trio .gallery__photo { aspect-ratio: 363 / 240; border-radius: 12px; }
+  .gallery.gallery--trio { gap: 16px; }
+  .gallery.gallery--trio .gallery__photo { aspect-ratio: 1088 / 720; border-radius: 12px; }
   .voice-photo { width: 96px; height: 96px; }
+  /* Card border is 1.5px. At 1x it uses 1px, so the gap leaves the manifest photo box. */
+  .hof-featured { gap: 26px; }
+  .hof-featured .hof-card__photo { aspect-ratio: 354 / 357; }
+  .hof-grid { gap: 21.25px; }
+  .hof-grid .hof-card__photo { aspect-ratio: 205 / 208; }
 
   .hero__title {
     min-height: 120px;
@@ -1536,7 +1574,6 @@ th {
   }
 
   .hero__photo {
-    /* Provisional: mobile hero radius is not confirmed, so the slide stays square to the screen edge. */
     border-radius: 0;
     min-height: 0;
   }
