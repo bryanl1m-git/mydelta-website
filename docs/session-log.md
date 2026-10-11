@@ -52,3 +52,9 @@ The hold is released. On desktop the Primary Daycare timetable row is 1120px wid
 Primary Tuition, the Public Speaking FAQ, Explore more, and the contact registration form are gone. The daycare timetable still mentions tuition as part of the day. The gallery before the public-speaking call to action keeps the orange wave class that sat on Explore more. WhatsApp, phone, and email stay on Contact. No nav item pointed at the removed sections.
 
 — Sage (Second)
+
+## 11 Oct 2026 — Wavy dividers
+
+Band colours use background-color, so the wave image stays. Desktop bands use the traced 58px divider and mobile uses the 20px vector. Page heroes use the same pair. Nunito 600 is on the Google Fonts link.
+
+— Sage (Second)

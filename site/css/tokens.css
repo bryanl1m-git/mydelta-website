@@ -69,6 +69,6 @@
   --header-height-mobile: 64px;
   --page-hero-min: 256px;
   --section-pad: var(--space-40);
-  --wave-height: 28px;
+  --wave-height: 20px;
   --side-pad: var(--space-24);
 }

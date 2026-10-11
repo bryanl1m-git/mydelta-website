@@ -17,7 +17,7 @@
 
   TODO session 3 — responsive polish:
   - Spec frames are 1440 and 390 only. The tablet columns above are a working pass.
-  - Match per-section wave heights (desktop 58–134px, mobile 20px).
+  - Desktop section waves are the traced 58px dividers. Mobile uses the 20px vector.
   - Flush columns, equal photo heights, card centres lined up across sections.
   - Match the mobile menu overlay to frame 191:3267 once it is exported.
 */
@@ -154,7 +154,8 @@ a {
   text-transform: uppercase;
 }
 
-/* Curves are a skeleton of the wavy dividers. Exact humps are a later pass. */
+/* The wave sits in the bottom padding. Band colour uses background-color
+   so a later .band--* rule cannot clear the image. */
 .curve-to-white,
 .curve-to-cream,
 .curve-to-yellow,
@@ -166,18 +167,18 @@ a {
   padding-bottom: calc(var(--section-pad) + var(--wave-height));
 }
 
-.curve-to-white { background-image: url("../assets/waves/to-white.svg"); }
-.curve-to-cream { background-image: url("../assets/waves/to-cream.svg"); }
-.curve-to-yellow { background-image: url("../assets/waves/to-yellow.svg"); }
-.curve-to-orange { background-image: url("../assets/waves/to-orange.svg"); }
-.curve-to-navy { background-image: url("../assets/waves/to-navy.svg"); }
+.curve-to-white { background-image: url("../assets/waves/CLEAN-mobile-to-white.svg"); }
+.curve-to-cream { background-image: url("../assets/waves/CLEAN-mobile-to-cream.svg"); }
+.curve-to-yellow { background-image: url("../assets/waves/CLEAN-mobile-to-yellow.svg"); }
+.curve-to-orange { background-image: url("../assets/waves/CLEAN-mobile-to-orange.svg"); }
+.curve-to-navy { background-image: url("../assets/waves/CLEAN-mobile-to-navy.svg"); }
 
-.band--cream { background: var(--color-cream); }
-.band--yellow { background: var(--color-yellow-band); }
-.band--white { background: var(--color-white); }
+.band--cream { background-color: var(--color-cream); }
+.band--yellow { background-color: var(--color-yellow-band); }
+.band--white { background-color: var(--color-white); }
 
 .band--orange {
-  background: var(--color-orange-band);
+  background-color: var(--color-orange-band);
   color: var(--color-white);
 }
 
@@ -1126,8 +1127,14 @@ th {
     --text-h4-line: 25px;
     --text-lead-size: 20px;
     --section-pad: var(--space-64);
-    --wave-height: 72px;
+    --wave-height: 58px;
   }
+
+  .curve-to-white { background-image: url("../assets/waves/TRACED-to-white.svg"); }
+  .curve-to-cream { background-image: url("../assets/waves/TRACED-to-cream.svg"); }
+  .curve-to-yellow { background-image: url("../assets/waves/TRACED-to-yellow.svg"); }
+  .curve-to-orange { background-image: url("../assets/waves/TRACED-to-orange.svg"); }
+  .curve-to-navy { background-image: url("../assets/waves/TRACED-to-navy.svg"); }
 
   .topbar {
     display: block;
@@ -1339,7 +1346,6 @@ th {
     --text-h2-size: 36px;
     --text-h2-line: 42px;
     --section-pad: var(--space-48);
-    --wave-height: 48px;
     --side-pad: var(--space-32);
   }
 
