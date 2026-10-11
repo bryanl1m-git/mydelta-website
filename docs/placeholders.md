@@ -4,7 +4,7 @@ Swap these in the HTML sources under `src/`, then run `python3 scripts/assemble_
 
 ## Photos
 
-Programme photos now come from the Figma frames and live in `site/assets/photos/`. The contact map is still a `photo-placeholder`. Primary Tuition, FAQ, Explore more, and the contact form are not given photos.
+Programme photos now come from the Figma frames and live in `site/assets/photos/`. Primary Tuition, FAQ, Explore more, and the contact form are not given photos.
 
 ## Reviews
 
