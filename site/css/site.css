@@ -1413,35 +1413,59 @@ th {
 
 .reach-card {
   background: var(--color-cream);
-  border-radius: var(--radius-image);
-  padding: var(--space-24);
+  border: 1px solid #d9d3c7;
+  border-radius: 12px;
+  padding: 20px 24px;
 }
 
 .reach-card h3 {
   margin-bottom: var(--space-8);
   color: var(--color-accent);
-  font-size: 14px;
-  letter-spacing: 0.08em;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
 .reach-card a,
 .reach-card p {
   color: var(--color-heading);
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 1.35;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  overflow-wrap: anywhere;
   text-decoration: none;
 }
 
-.map-placeholder {
-  min-height: 240px;
-  border-radius: var(--radius-image);
+.map-frame {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: 280px;
+  border: 1px solid #d9d3c7;
+  border-radius: 12px;
+  background: #edf0f5;
 }
 
-.map-placeholder a {
-  color: var(--color-heading);
-  font-weight: 800;
+.section.band--white .mvv-card--vision {
+  background: #fff8eb;
+  border-radius: 20px;
+}
+
+.mvv-card--vision h3 {
+  color: var(--color-accent);
+  font-size: 24px;
+}
+
+.section.band--white .mvv-card--mission {
+  background: var(--color-heading);
+  border-radius: 20px;
+}
+
+.mvv-card--mission h3,
+.mvv-card--mission p {
+  color: var(--color-white);
 }
 
 .address {
@@ -1593,7 +1617,7 @@ th {
   .daycare-overview { aspect-ratio: 536 / 481; }
   .speaking-overview { aspect-ratio: 536 / 464; }
   .about-story,
-  .about-mission { aspect-ratio: 540 / 260; border-radius: 24px; }
+  .about-mission { aspect-ratio: 536 / 260; border-radius: 24px; }
   .history-photo { aspect-ratio: 1088 / 900; border-radius: 24px; }
   .history-photos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .gallery.gallery--trio { gap: 16px; }
@@ -1755,6 +1779,31 @@ th {
   .location-grid,
   .schedule-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-story-split {
+    grid-template-columns: 536px minmax(0, 1fr);
+  }
+
+  .about-story-split .photo-stack {
+    order: -1;
+  }
+
+  .location-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 640px);
+    align-items: center;
+  }
+
+  .reach-card a,
+  .reach-card p {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .map-frame {
+    height: 240px;
+    max-width: 640px;
+    justify-self: end;
   }
 
   .gallery {
