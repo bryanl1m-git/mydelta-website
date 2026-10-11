@@ -16,7 +16,7 @@ Three featured cards and the nineteen grid cards from the Figma frame, with the 
 
 ## Map
 
-The contact page shows a map placeholder that links to a public Google Maps search. There is no maps API key.
+The contact page embeds a Google Map for the Bandar Botanik address. There is no maps API key.
 
 ## Social
 

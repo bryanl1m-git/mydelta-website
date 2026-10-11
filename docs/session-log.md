@@ -87,7 +87,7 @@ Subpage heroes use the Figma type: on a 390px screen the eyebrow is 12px, the he
 
 ## 11 Oct 2026 — Home testimonials
 
-The Home parent band is orange, with three cards and a highlighted middle card. The quote sentences stay marked as placeholders. The circles use the exported avatars for Emily Song, Joelyn Chong, and Amanda Wyt, at 80px on a wide screen and 48px on a phone. The 1440×134 flourish sits on the top and bottom of that band on a wide screen. A phone keeps the plain 20px wave.
+The Home parent band is orange, with three cards and a highlighted middle card. The quotes and names are the Figma copy: Emily Song, Joelyn Chong, and Amanda Wyt. The circles use the exported avatars, at 80px on a wide screen and 48px on a phone. The 1440×134 flourish sits on the top and bottom of that band on a wide screen. A phone keeps the plain 20px wave.
 
 — Sage (Second)
 
@@ -111,6 +111,6 @@ On a wide screen, subpage sections use 48px of padding instead of 64px. Home sta
 
 ## 11 Oct 2026 — About and Contact
 
-On a wide screen the About story photos sit on the left. The vision card is cream and the mission card is navy, and both keep a visible heading: “Our Vision” in accent orange, “Our Mission” in white. Contact reach cards are cream with a 12px radius and a 1px border. The map placeholder is a Google Maps embed of the Bandar Botanik address, 280px tall on a phone and 240px tall on a wide screen. Each value tile has its exported icon on a #FFDD98 circle, 24px on a wide screen and 16.8px on a phone.
+On a wide screen the About story photos sit on the left. The story wrapper uses the same indent as the other sections. The vision card is cream and the mission card is navy. “Our Vision” and “Our Mission” are visible 24px headings: the vision title is accent orange, and the mission title is white. Contact reach cards are cream with a 12px radius and a 1px border. The map placeholder is a Google Maps embed of the Bandar Botanik address, 280px tall on a phone and 240px tall on a wide screen. Each value tile has its exported icon on a #FFDD98 circle, 24px on a wide screen and 16.8px on a phone.
 
 — Sage (Second)

@@ -1485,9 +1485,15 @@ th {
   border-radius: 20px;
 }
 
+.mvv-card--vision h3,
+.mvv-card--mission h3 {
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 30px;
+}
+
 .mvv-card--vision h3 {
   color: var(--color-accent);
-  font-size: 24px;
 }
 
 .section.band--white .mvv-card--mission {
