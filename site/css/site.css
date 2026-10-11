@@ -751,13 +751,67 @@ body.menu-open {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* White fact tiles. Four across on a wide screen, two on a phone. */
 .fact-grid {
-  margin-bottom: var(--space-32);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 28px;
 }
 
-/* Desktop timetable chips. The tables stay for the 390px frame. */
+.fact-tile {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 18px 16px;
+  background: var(--color-white);
+  border: 0;
+  border-radius: 12px;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.fact-tile__label {
+  margin: 0 0 6px;
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.fact-tile__value {
+  margin: 0 0 6px;
+  color: var(--color-heading);
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 24px;
+}
+
+.fact-tile__note {
+  margin: 0;
+  color: #595966;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+#life-heading {
+  font-size: 28px;
+  line-height: 34px;
+}
+
+#life .gallery__photo {
+  aspect-ratio: auto;
+  height: 140px;
+  object-fit: cover;
+}
+
+/* Timetable chips at every width. Phone rows put the time on the left. */
 .timetable-row {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .timetable-card {
@@ -765,7 +819,7 @@ body.menu-open {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  height: 123px;
+  min-width: 0;
   padding: 20px;
   background: var(--color-white);
   border-radius: var(--radius-tile);
@@ -774,15 +828,14 @@ body.menu-open {
 .timetable-card h3 {
   margin: 0;
   font-size: 22px;
-  line-height: 30px;
-  white-space: nowrap;
+  line-height: 28px;
 }
 
 .timetable-chips {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -791,77 +844,90 @@ body.menu-open {
 
 .timetable-chips li {
   display: flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  gap: 2px;
-  white-space: nowrap;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
 }
 
 .timetable-chip__time {
+  flex: 0 0 80px;
+  width: 80px;
   color: var(--color-accent);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  line-height: 18px;
+  line-height: 16px;
 }
 
 .timetable-chip__activity {
+  min-width: 0;
   color: var(--color-heading);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
-  line-height: 19px;
-}
-
-@media (min-width: 768px) {
-  .schedule-tables {
-    display: none;
-  }
-
-  .timetable-row {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-24);
-  }
+  line-height: 18px;
 }
 
 @media (min-width: 1100px) {
-  #programme {
-    height: 550px;
-    padding-block: 48px;
+  .fact-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 36px;
   }
 
-  #programme > .wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+  .fact-tile {
+    min-height: 149px;
   }
 
   #programme h2,
-  #programme > .wrap > p,
-  #programme .fact-grid {
-    margin: 0;
+  #apart-heading {
+    font-size: 36px;
+    line-height: 40px;
   }
 
-  #programme h2 {
-    font-size: 36px;
-    line-height: 49px;
+  #life .gallery__photo {
+    height: 240px;
   }
 
   .timetable-row {
     flex-direction: row;
     align-items: stretch;
+    gap: 24px;
     width: 100%;
-    height: 123px;
   }
 
   .timetable-card--morning {
-    flex: 784 1 auto;
+    flex: 784 1 0;
     max-width: 784px;
   }
 
   .timetable-card--afternoon {
-    flex: 312 1 auto;
+    flex: 312 1 0;
     max-width: 312px;
+  }
+
+  .timetable-chips {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .timetable-chips li {
+    flex: 0 1 auto;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .timetable-chip__time {
+    flex: none;
+    width: auto;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .timetable-chip__activity {
+    font-size: 14px;
+    line-height: 19px;
   }
 }
 
@@ -884,14 +950,18 @@ body.menu-open {
     padding: var(--space-16);
   }
 
-  .card-grid--pairs .card h3 {
-    font-size: 18px;
-    line-height: 22px;
-    overflow-wrap: break-word;
+  .card-grid--pairs .card h3,
+  .tile-grid .card h3 {
+    font-size: 15px;
+    line-height: 20px;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
   }
 
   .card-grid--pairs .card p {
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    hyphens: none;
   }
 }
 
@@ -946,6 +1016,17 @@ body.menu-open {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.25;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+@media (max-width: 767px) {
+  .tile-grid .card h3,
+  .card-grid--pairs .card h3 {
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
 
 .tile-grid .card p {

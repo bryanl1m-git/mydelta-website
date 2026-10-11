@@ -85,7 +85,7 @@
   </div>
 </section>
 
-<section class="section band band--white" aria-labelledby="daycare-overview-heading">
+<section class="section band band--white curve-to-yellow" aria-labelledby="daycare-overview-heading">
   <div class="wrap split">
     <div>
       <h2 id="daycare-overview-heading">Care that lets parents work the day</h2>
@@ -96,106 +96,81 @@
   </div>
 </section>
 
-<section class="section band band--yellow" id="programme" aria-labelledby="programme-heading">
+<section class="section band band--yellow curve-to-white" id="programme" aria-labelledby="programme-heading">
   <div class="wrap">
-    <h2 id="programme-heading">Programme and timetable</h2>
-    <p>Front desk hours are Mon–Fri, 8:00 am – 6:00 pm.</p>
-    <div class="card-grid card-grid--3 fact-grid">
-      <article class="card">
-        <h3>Who &amp; when</h3>
-        <p>Year 1–6</p>
-        <p>Monday – Friday</p>
+    <h2 id="programme-heading">Programme at a glance</h2>
+    <div class="fact-grid">
+      <article class="fact-tile">
+        <p class="fact-tile__label">Who &amp; when</p>
+        <p class="fact-tile__value">Year 1-6</p>
+        <p class="fact-tile__note">Monday - Friday</p>
       </article>
-      <article class="card">
-        <h3>Morning</h3>
-        <p>7.30am – 11.15am</p>
-        <p>Year 1–3 · arrival, homework guidance, tuition and ECA programme</p>
+      <article class="fact-tile">
+        <p class="fact-tile__label">Morning</p>
+        <p class="fact-tile__value">7.30am - 11.15am</p>
+        <p class="fact-tile__note">Year 1-3 - arrival, homework guidance, tuition and ECA programme</p>
       </article>
-      <article class="card">
-        <h3>Afternoon</h3>
-        <p>2.00pm – 3.45pm</p>
-        <p>Year 4–6 · homework guidance and ECA programme</p>
+      <article class="fact-tile">
+        <p class="fact-tile__label">Afternoon</p>
+        <p class="fact-tile__value">2.00pm - 3.45pm</p>
+        <p class="fact-tile__note">Year 4-6 - homework guidance and ECA programme</p>
+      </article>
+      <article class="fact-tile">
+        <p class="fact-tile__label">Subjects</p>
+        <p class="fact-tile__value">5 core subjects</p>
+        <p class="fact-tile__note">BM, English, Mandarin, Science, Maths - Year 4-6 add Sejarah, Karangan, Essay, 作文</p>
       </article>
     </div>
-    <div class="schedule-grid schedule-tables">
-      <div class="table-wrap">
-        <table>
-          <caption>Morning · Year 1–3 · 7.30am – 11.15am</caption>
-          <thead>
-            <tr><th scope="col">Time</th><th scope="col">Activity</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>7.30–8.00am</td><td>Arrival</td></tr>
-            <tr><td>8.00–9.00am</td><td>Homework Guidance</td></tr>
-            <tr><td>9.15–10.00am</td><td>Tuition Class Session 1</td></tr>
-            <tr><td>10.00–10.45am</td><td>Tuition Class Session 2</td></tr>
-            <tr><td>10.45–11.15am</td><td>ECA Programme</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <caption>Afternoon · Year 4–6 · 2.00pm – 3.45pm</caption>
-          <thead>
-            <tr><th scope="col">Time</th><th scope="col">Activity</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>2.00–3.15pm</td><td>Homework Guidance</td></tr>
-            <tr><td>3.15–3.45pm</td><td>ECA Programme</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <h2 id="timetable-heading">Daycare Timetable</h2>
     <div class="timetable-row">
       <article class="timetable-card timetable-card--morning">
-        <h3>Morning · Year 1–3</h3>
+        <h3>Morning - Year 1-3</h3>
         <ul class="timetable-chips">
-          <li><span class="timetable-chip__time">7.30–8.00am</span><span class="timetable-chip__activity">Arrival</span></li>
-          <li><span class="timetable-chip__time">8.00–9.00am</span><span class="timetable-chip__activity">Homework Guidance</span></li>
-          <li><span class="timetable-chip__time">9.15–10.00am</span><span class="timetable-chip__activity">Tuition Class Session 1</span></li>
-          <li><span class="timetable-chip__time">10.00–10.45am</span><span class="timetable-chip__activity">Tuition Class Session 2</span></li>
-          <li><span class="timetable-chip__time">10.45–11.15am</span><span class="timetable-chip__activity">ECA Programme</span></li>
+          <li><span class="timetable-chip__time">7.30-8.00am</span><span class="timetable-chip__activity">Arrival</span></li>
+          <li><span class="timetable-chip__time">8.00-9.00am</span><span class="timetable-chip__activity">Homework Guidance</span></li>
+          <li><span class="timetable-chip__time">9.15-10.00am</span><span class="timetable-chip__activity">Tuition Class Session 1</span></li>
+          <li><span class="timetable-chip__time">10.00-10.45am</span><span class="timetable-chip__activity">Tuition Class Session 2</span></li>
+          <li><span class="timetable-chip__time">10.45-11.15am</span><span class="timetable-chip__activity">ECA Programme</span></li>
         </ul>
       </article>
       <article class="timetable-card timetable-card--afternoon">
-        <h3>Afternoon · Year 4–6</h3>
+        <h3>Afternoon - Year 4-6</h3>
         <ul class="timetable-chips">
-          <li><span class="timetable-chip__time">2.00–3.15pm</span><span class="timetable-chip__activity">Homework Guidance</span></li>
-          <li><span class="timetable-chip__time">3.15–3.45pm</span><span class="timetable-chip__activity">ECA Programme</span></li>
+          <li><span class="timetable-chip__time">2.00-3.15pm</span><span class="timetable-chip__activity">Homework Guidance</span></li>
+          <li><span class="timetable-chip__time">3.15-3.45pm</span><span class="timetable-chip__activity">ECA Programme</span></li>
         </ul>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section band band--cream curve-to-white" aria-labelledby="apart-heading">
+<section class="section band band--white" aria-labelledby="apart-heading">
   <div class="wrap">
-    <h2 id="apart-heading">What sets us apart</h2>
+    <h2 id="apart-heading">What sets MyDelta Daycare apart?</h2>
     <div class="card-grid card-grid--pairs tile-grid">
       <article class="card">
-        <h3>Caring and qualified staff</h3>
-        <p>Childcare professionals who want to work with children, in a safe and stimulating room.</p>
+        <h3>Caring Staff</h3>
+        <p>Experienced carers in a nurturing setting.</p>
       </article>
       <article class="card">
-        <h3>Safe and secure environment</h3>
-        <p>Secure entry, monitored surveillance, and strict safety guidelines. Your child’s safety comes first.</p>
+        <h3>Safe &amp; Secure</h3>
+        <p>Entry and monitored surveillance.</p>
       </article>
       <article class="card">
-        <h3>Open communication</h3>
-        <p>Daily reports, newsletters, and parent-teacher conferences, so you can follow progress and milestones.</p>
+        <h3>Open Communication</h3>
+        <p>Daily reports and parent conferences.</p>
       </article>
       <article class="card">
-        <h3>Engaging learning</h3>
-        <p>Tutors build a rapport and use activities, multimedia, and real examples so lessons stay relatable.</p>
+        <h3>Engaging Learning</h3>
+        <p>Interactive lessons + tuition support.</p>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section band band--white curve-to-orange" aria-labelledby="life-heading">
+<section class="section band band--white curve-to-orange" id="life" aria-labelledby="life-heading">
   <div class="wrap">
     <h2 id="life-heading">Life at MyDelta</h2>
-    <p>A look at the day in Bandar Botanik.</p>
     <div class="gallery gallery--trio">
       <img class="frame-photo gallery__photo" src="assets/photos/about-story-2.jpg" alt="A student during a height check" width="768" height="886">
       <img class="frame-photo gallery__photo" src="assets/photos/about-story-3.jpg" alt="Children sitting in a circle" width="413" height="340">
