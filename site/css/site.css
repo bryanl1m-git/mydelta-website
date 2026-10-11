@@ -706,7 +706,18 @@ body.menu-open {
 }
 
 .feature-row article {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
   min-width: 0;
+}
+
+.feature-icon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
 }
 
 .feature-row h3 {
@@ -1650,6 +1661,16 @@ th {
   .feature-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 40px;
+  }
+
+  .feature-row article {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .feature-icon {
+    width: 88px;
+    height: 88px;
   }
 
   .feature-row h3 {

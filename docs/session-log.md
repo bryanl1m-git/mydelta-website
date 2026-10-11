@@ -99,6 +99,6 @@ Subpage pages end on a yellow visit band. Enquire stays accent, and WhatsApp Us 
 
 ## 11 Oct 2026 — Home hero
 
-The Home hero type follows the 390 and 1440 frames: a white eyebrow pill and a 32px heading on a phone, and a 16px eyebrow, 52px heading, and bold 20px line on a wide screen. The trust row is white, with 16px bold type. The three offers sit in a plain row, without the cream cards. The offer icons are not in the repo, so that row has no icon tiles.
+The Home hero type follows the 390 and 1440 frames: a white eyebrow pill and a 32px heading on a phone, and a 16px eyebrow, 52px heading, and bold 20px line on a wide screen. The trust row is white, with 16px bold type. The three offers sit in a plain row, without the cream cards. Each offer uses its exported icon at 64px on a phone and 88px on a wide screen.
 
 — Sage (Second)
