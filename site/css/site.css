@@ -1145,7 +1145,8 @@ body.menu-open {
 .page-hero {
   background-color: var(--color-yellow-band);
   text-align: center;
-  padding: 40px var(--space-24) 32px;
+  /* Side inset comes from .wrap. Extra padding here would shrink the 390 frame to 294px. */
+  padding: 40px 0 32px;
 }
 
 .page-hero.curve-to-white,
@@ -1527,6 +1528,10 @@ th {
     --text-lead-size: 20px;
     --section-pad: var(--space-64);
     --wave-height: 58px;
+  }
+
+  body:not(.page-home) {
+    --section-pad: 48px;
   }
 
   .curve-to-white { background-image: url("../assets/waves/TRACED-to-white.svg"); }
