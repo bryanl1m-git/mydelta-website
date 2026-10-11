@@ -4,8 +4,6 @@
   Wired:
   - Manual hero slider. Three slides, previous / next / dots, no autoplay.
   - Mobile menu: focus trap, inert page, Escape, focus returned to the toggle.
-  - Contact form opens WhatsApp, with a mailto link as the fallback.
-    Nothing is posted to a server.
 
   The slider crossfade is 450ms in CSS, or instant under prefers-reduced-motion.
   The menu uses the same motion preference for its open and close fade.
@@ -163,40 +161,6 @@
       first.focus();
     }
   });
-
-  var form = document.getElementById("enquiry-form");
-  if (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      var data = new FormData(form);
-      var parent = String(data.get("parent_name") || "").trim();
-      var phone = String(data.get("phone") || "").trim();
-      var service = String(data.get("service") || "").trim();
-      var message = [
-        "Hi MyDelta, I'd like to enquire.",
-        "Parent: " + parent,
-        "Phone: " + phone,
-        "Service: " + service
-      ].join("\n");
-      var whatsapp = "https://wa.me/60126726140?text=" + encodeURIComponent(message);
-      var mail = "mailto:mydeltaedu@gmail.com?subject=" +
-        encodeURIComponent("MyDelta enquiry: " + service) +
-        "&body=" + encodeURIComponent(message);
-      var status = document.getElementById("enquiry-status");
-      var mailLink = document.getElementById("enquiry-mailto");
-      if (mailLink) {
-        mailLink.href = mail;
-        mailLink.hidden = false;
-      }
-      if (status) {
-        status.textContent = "Opening WhatsApp with your enquiry. If it does not open, use the email link.";
-      }
-      var opened = window.open(whatsapp, "_blank", "noopener,noreferrer");
-      if (!opened && status) {
-        status.textContent = "WhatsApp did not open. Use the email link to send the same enquiry.";
-      }
-    });
-  }
 
   function initSlider() {
     var hero = document.querySelector("[data-slider]");
