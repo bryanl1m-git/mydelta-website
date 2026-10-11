@@ -87,6 +87,6 @@ Subpage heroes use the Figma type: on a 390px screen the eyebrow is 12px, the he
 
 ## 11 Oct 2026 — Home testimonials
 
-The Home parent band is orange, with three cards and a highlighted middle card. The quote sentences stay marked as placeholders. The circles use the exported avatars for Emily Song, Joelyn Chong, and Amanda Wyt, at 80px on a wide screen and 48px on a phone. The 1440×134 flourish sits on the top and bottom of that band on a wide screen. A phone keeps the plain 20px wave.
+The Home parent band is orange, with three cards and a highlighted middle card. The quotes and names are the Figma copy: Emily Song, Joelyn Chong, and Amanda Wyt. The circles use the exported avatars, at 80px on a wide screen and 48px on a phone. The 1440×134 flourish sits on the top and bottom of that band on a wide screen. A phone keeps the plain 20px wave.
 
 — Sage (Second)
