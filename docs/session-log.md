@@ -162,3 +162,9 @@ The daycare hero no longer says that pricing is absent. The Home slides no longe
 The contact map uses the live site’s Google Maps place for 20, Jalan Mahogani 1, Bandar Botanik. The iframe is lazy, sends no referrer, and is sandboxed to the permissions Maps needs. A page policy allows frames only from Google Maps. Join Us copy is unchanged.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Social link names
+
+The hidden label on each social link is the network name only: Facebook, Instagram, TikTok, or Xiaohongshu. The Xiaohongshu address is unchanged.
+
+— Sage (Second)

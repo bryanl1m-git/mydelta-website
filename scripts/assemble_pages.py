@@ -87,7 +87,7 @@ def social_list(variant):
         items.append(
             '<li><a class="social-link" href="{url}" data-placeholder="social-pending" '
             'target="_blank" rel="noopener noreferrer">'
-            '<span class="visually-hidden">{label} (placeholder URL, pending confirmation)</span>'
+            '<span class="visually-hidden">{label}</span>'
             "{icon}</a></li>".format(url=url, label=label, icon=icon_svg(name))
         )
     return '<ul class="social-list social-list--{variant}">{items}</ul>'.format(
