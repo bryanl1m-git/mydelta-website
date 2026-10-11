@@ -114,3 +114,9 @@ On a wide screen, subpage sections use 48px of padding instead of 64px. Home sta
 On a wide screen the About story photos sit on the left. The story wrapper uses the same indent as the other sections. The vision card is cream and the mission card is navy. “Our Vision” and “Our Mission” are visible 24px headings: the vision title is accent orange, and the mission title is white. Contact reach cards are cream with a 12px radius and a 1px border. The map placeholder is a Google Maps embed of the Bandar Botanik address, 280px tall on a phone and 240px tall on a wide screen. Each value tile has its exported icon on a #FFDD98 circle, 24px on a wide screen and 16.8px on a phone.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Daycare fact tiles
+
+Primary Daycare programme facts are four white tiles (radius 12, no border), including Subjects. The timetable is chip rows at every width: time above the activity on a wide screen, time on the left on a phone. The tables are gone. “What sets MyDelta Daycare apart?” sits on white, and those titles no longer break mid-word at 390px. “Life at MyDelta” drops the extra line. The orange wave above the visit band is unchanged in this batch.
+
+— Sage (Second)
