@@ -6,7 +6,7 @@ Static marketing site for MyDelta Academy in Bandar Botanik, Klang. Six pages, p
 
 - `site/index.html` — Home (manual 3-slide hero, no autoplay)
 - `site/about.html` — About Us
-- `site/primary-daycare.html` — Primary Daycare, including Primary Tuition
+- `site/primary-daycare.html` — Primary Daycare
 - `site/public-speaking.html` — Public Speaking
 - `site/hall-of-fame.html` — Hall of Fame placeholders
 - `site/contact.html` — Contact, WhatsApp / email fallback

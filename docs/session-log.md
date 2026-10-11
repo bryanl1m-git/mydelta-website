@@ -46,3 +46,9 @@ Header bar hours are unchanged. The desktop timetable stays side by side; stacki
 The hold is released. On desktop the Primary Daycare timetable row is 1120px wide with a 24px gap: Morning is 784×123 and Afternoon is 312×123. Each period is a chip with the time in red above the activity, sized to the text and spaced across the card. The programme band is 550px tall. Below 1100px the two cards stack so the chips stay on one line. The 390px frame still uses the tables.
 
 — Sage (Second)
+
+## 11 Oct 2026 — Sections removed
+
+Primary Tuition, the Public Speaking FAQ, Explore more, and the contact registration form are gone. The daycare timetable still mentions tuition as part of the day. The gallery before the public-speaking call to action keeps the orange wave class that sat on Explore more. WhatsApp, phone, and email stay on Contact. No nav item pointed at the removed sections.
+
+— Sage (Second)
