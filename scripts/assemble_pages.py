@@ -51,7 +51,7 @@ PAGES_META = (
         "public-speaking.html",
         "speaking",
         "Public Speaking",
-        "Weekend public speaking for Year 1 to Year 6, in Bahasa Melayu and English.",
+        "Saturday public speaking for Year 1 to Year 6, in Bahasa Melayu and English.",
     ),
     (
         "hall-of-fame.html",
