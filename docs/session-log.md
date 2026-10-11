@@ -90,3 +90,9 @@ Subpage heroes use the Figma type: on a 390px screen the eyebrow is 12px, the he
 The Home parent band is orange, with three cards and a highlighted middle card. The quotes stay marked as placeholders. The parent photos are not in the repo, and Figma could not be exported from this environment. The circles are initials until those frames are exported.
 
 — Sage (Second)
+
+## 11 Oct 2026 — CTA and footer
+
+Subpage pages end on a yellow visit band. Enquire stays accent, and WhatsApp Us is navy. Home ends on the yellow Join Us band, with the lounge photo, and has no visit band. The footer bar is #384C86 on Home and #20409A on the other pages. On a 390px Home screen the footer also shows hours, the WhatsApp number, and the social circles.
+
+— Sage (Second)

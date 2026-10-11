@@ -133,7 +133,7 @@ def main():
             "<head>\n"
             + head
             + "</head>\n"
-            "<body>\n"
+            '<body class="page-' + nav + '">\n'
             + header
             + '<main id="main">\n'
             + body
