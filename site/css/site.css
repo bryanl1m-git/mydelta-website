@@ -3040,8 +3040,24 @@ th {
     margin-top: 16px;
   }
 
+  .quotes__item {
+    display: grid;
+  }
+
+  .quotes__card,
   .quotes__by {
-    margin-top: -60px;
+    grid-area: 1 / 1;
+  }
+
+  .quotes__card {
+    padding-bottom: 84px;
+  }
+
+  .quotes__by {
+    align-self: end;
+    margin: 0;
+    padding: 0 24px 24px;
+    z-index: 1;
   }
 
   .hero__layout {
