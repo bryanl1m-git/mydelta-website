@@ -23,8 +23,9 @@ jobs:
 
       - name: Committed HTML matches the assemble script
         run: |
-          if ! git diff --exit-code -- site/; then
-            echo "::error::site/*.html is out of date. Edit src/ and run python3 scripts/assemble_pages.py."
+          if [ -n "$(git status --porcelain -- site/)" ]; then
+            git status --short -- site/
+            echo "::error::site/ is out of date. Edit src/ and run python3 scripts/assemble_pages.py."
             exit 1
           fi
 
@@ -36,11 +37,12 @@ jobs:
 
           expected = (
               "index.html",
-              "about.html",
-              "primary-daycare.html",
-              "public-speaking.html",
-              "hall-of-fame.html",
-              "contact.html",
+              "about/index.html",
+              "primary-daycare/index.html",
+              "public-speaking/index.html",
+              "hall-of-fame/index.html",
+              "contact/index.html",
+              "404.html",
           )
           site = Path("site")
           errors = []
@@ -58,8 +60,17 @@ jobs:
                   errors.append(f"site/{name} still has an unreplaced token")
               if text.count("<h1") != 1:
                   errors.append(f"site/{name} should have exactly one h1")
+              if name != "404.html" and '<link rel="canonical" href="https://mydeltaedu.my/' not in text:
+                  errors.append(f"site/{name} is missing its canonical URL")
+              if 'noindex' in text and name != "404.html":
+                  errors.append(f"site/{name} is committed as noindex; build without --noindex")
+              if '.html"' in text.replace("404.html", ""):
+                  errors.append(f"site/{name} still links to a .html URL")
+          for extra in ("sitemap.xml", "robots.txt"):
+              if not (site / extra).is_file():
+                  errors.append(f"missing site/{extra}")
           if errors:
               print("\n".join(errors), file=sys.stderr)
               sys.exit(1)
-          print(f"checked {len(expected)} pages")
+          print(f"checked {len(expected)} pages, sitemap.xml and robots.txt")
           PY

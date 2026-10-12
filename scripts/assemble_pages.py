@@ -7,7 +7,10 @@ sources. GitHub Pages publishes site/ as-is and does not run this script.
 — Sage
 """
 
+import argparse
+import os
 import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -67,6 +70,70 @@ PAGES_META = (
     ),
 )
 
+# Source page -> clean URL path (relative to the base path). Pages are written
+# as <path>/index.html so /about works on any static host.
+PAGE_PATHS = {
+    "index.html": "",
+    "about.html": "about",
+    "primary-daycare.html": "primary-daycare",
+    "public-speaking.html": "public-speaking",
+    "hall-of-fame.html": "hall-of-fame",
+    "contact.html": "contact",
+}
+
+NOT_FOUND = (
+    "404.html",
+    "",
+    "Page not found",
+    "The page you were looking for is not on the MyDelta website.",
+)
+
+DEFAULT_SITE_URL = "https://mydeltaedu.my"
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--base-path",
+        default=os.environ.get("BASE_PATH", "/"),
+        help="URL path the site is served from, e.g. / or /mydelta-website/",
+    )
+    parser.add_argument(
+        "--site-url",
+        default=os.environ.get("SITE_URL", DEFAULT_SITE_URL),
+        help="Origin used for canonical URLs and the sitemap",
+    )
+    parser.add_argument(
+        "--noindex",
+        action="store_true",
+        default=os.environ.get("NOINDEX", "") not in ("", "0", "false"),
+        help="Staging/preview build: robots noindex and Disallow all",
+    )
+    args = parser.parse_args()
+    base = "/" + args.base_path.strip("/")
+    args.base_path = base if base == "/" else base + "/"
+    args.site_url = args.site_url.rstrip("/")
+    return args
+
+
+def page_url(base, path):
+    return base + path if path else base
+
+
+def rewrite_links(document, base):
+    """Make page links clean and asset paths root-absolute under base."""
+
+    def page_link(match):
+        name, frag = match.group(1) + ".html", match.group(2) or ""
+        if name not in PAGE_PATHS:
+            sys.exit(f"Link to unknown page {name}")
+        return 'href="' + page_url(base, PAGE_PATHS[name]) + frag + '"'
+
+    document = re.sub(r'href="([a-z0-9-]+)\.html(#[^"]*)?"', page_link, document)
+    document = re.sub(r'(=")(assets|css|js)/', lambda m: m.group(1) + base + m.group(2) + "/", document)
+    document = re.sub(r'(,\s*)(assets)/', lambda m: m.group(1) + base + m.group(2) + "/", document)
+    return document
+
 
 def icon_svg(name):
     raw = (ICONS / f"{name}.svg").read_text(encoding="utf-8")
@@ -102,6 +169,8 @@ def fill(text, tokens):
 
 
 def main():
+    args = parse_args()
+    base = args.base_path
     head = (PARTIALS / "head.html").read_text(encoding="utf-8")
     header = (PARTIALS / "header.html").read_text(encoding="utf-8")
     footer = (PARTIALS / "footer.html").read_text(encoding="utf-8")
@@ -111,18 +180,41 @@ def main():
         "{{ICON:whatsapp}}": icon_svg("whatsapp"),
         "{{SOCIAL_INLINE}}": social_list("inline"),
         "{{SOCIAL_CIRCLES}}": social_list("circles"),
+        "{{ROBOTS}}": (
+            '<meta name="robots" content="noindex, nofollow">\n' if args.noindex else ""
+        ),
     }
     banner = (
         "<!-- Assembled from src/ by scripts/assemble_pages.py. "
         "Edit the sources, then re-run the script. — Sage -->\n"
     )
 
-    for filename, nav, title, description in PAGES_META:
+    # Remove pages from earlier runs (flat *.html and page folders).
+    for old in OUT.glob("*.html"):
+        old.unlink()
+    for path in PAGE_PATHS.values():
+        if path and (OUT / path).is_dir():
+            shutil.rmtree(OUT / path)
+
+    for filename, nav, title, description in PAGES_META + (NOT_FOUND,):
         body = (PAGES / filename).read_text(encoding="utf-8")
         body = body.replace("{{CTA}}", cta)
         tokens = dict(shared)
         tokens["{{TITLE}}"] = title
         tokens["{{DESCRIPTION}}"] = description
+        if filename == NOT_FOUND[0]:
+            tokens["{{CANONICAL}}"] = ""
+            if not args.noindex:
+                tokens["{{ROBOTS}}"] = '<meta name="robots" content="noindex">\n'
+        else:
+            url = args.site_url + page_url("/", PAGE_PATHS[filename])
+            tokens["{{CANONICAL}}"] = (
+                '<link rel="canonical" href="' + url + '">\n'
+                '<meta property="og:url" content="' + url + '">\n'
+                '<meta property="og:title" content="' + title + ' · MyDelta">\n'
+                '<meta property="og:description" content="' + description + '">\n'
+                '<meta property="og:type" content="website">\n'
+            )
         for key in NAV_KEYS:
             current = key == nav
             tokens["{{CLASS:" + key + "}}"] = " is-current" if current else ""
@@ -133,7 +225,7 @@ def main():
             "<head>\n"
             + head
             + "</head>\n"
-            '<body class="page-' + nav + '">\n'
+            '<body class="page-' + (nav or "404") + '">\n'
             + header
             + '<main id="main">\n'
             + body
@@ -143,11 +235,35 @@ def main():
             "</body>\n"
             "</html>\n"
         )
-        document = banner + fill(document, tokens)
+        document = banner + rewrite_links(fill(document, tokens), base)
         if "{{" in document:
             sys.exit(f"Unreplaced token left in {filename}")
-        (OUT / filename).write_text(document, encoding="utf-8")
-        print(f"wrote site/{filename}")
+        if filename == NOT_FOUND[0]:
+            target = OUT / "404.html"
+        else:
+            folder = OUT / PAGE_PATHS[filename]
+            folder.mkdir(parents=True, exist_ok=True)
+            target = folder / "index.html"
+        target.write_text(document, encoding="utf-8")
+        print(f"wrote {target.relative_to(ROOT)}")
+
+    urls = "".join(
+        "  <url><loc>" + args.site_url + page_url("/", PAGE_PATHS[f]) + "</loc></url>\n"
+        for f, *_ in PAGES_META
+    )
+    (OUT / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + urls
+        + "</urlset>\n",
+        encoding="utf-8",
+    )
+    if args.noindex:
+        robots = "User-agent: *\nDisallow: /\n"
+    else:
+        robots = "User-agent: *\nAllow: /\n\nSitemap: " + args.site_url + "/sitemap.xml\n"
+    (OUT / "robots.txt").write_text(robots, encoding="utf-8")
+    print("wrote site/sitemap.xml and site/robots.txt")
 
 
 if __name__ == "__main__":

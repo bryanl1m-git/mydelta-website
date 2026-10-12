@@ -32,6 +32,12 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v6
 
+      # The committed site/ is built for the root of mydeltaedu.my. The Pages
+      # preview lives under /mydelta-website/, so rebuild it with that base
+      # path and mark it noindex (it is a preview, not the canonical site).
+      - name: Assemble pages for the Pages project path
+        run: python3 scripts/assemble_pages.py --base-path /mydelta-website/ --noindex
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
