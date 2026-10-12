@@ -282,3 +282,9 @@ Good to know is two columns on a wide screen. Student voice photos are 96px ther
 “Ways to reach us” is 32px on a wide screen. The WhatsApp button sits clear of the cards. On a phone the line under the heading is only the hours. The location band has a straight top, a semibold address, and the hours in navy below it. The map embed is unchanged.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Join Us on a phone
+
+On a phone the Enquire button is full width, with “or WhatsApp us at 012-672 6140” under it. The visit sentence is unchanged. The Home footer labels the number “WhatsApp 012-672 6140”.
+
+— Sage (Second)
