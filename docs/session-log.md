@@ -294,3 +294,9 @@ On a phone the Enquire button is full width, with “or WhatsApp us at 012-672 6
 Primary Daycare and Public Speaking stay underlined. On a wide screen the trust items are centred in three columns, and the features band has more room before its wave. The trust band stays white. The outline medal, people, and microphone icons are still the current artwork.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Home story frame and What We Do
+
+A dashed navy frame with a #CCD4E5 fill sits behind the Our Story photo on a wide screen. On a phone, Learn More is full width, What We Do is the heading, the collage, then the copy, and the parent heading comes before the intro line. On a wide screen the What We Do copy starts 20px under the heading. What We Do is a white band with no wave. The current paragraph stays, and the bold line and navy checks are added.
+
+— Sage (Second)
