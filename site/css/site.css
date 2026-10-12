@@ -731,6 +731,11 @@ body.menu-open {
   line-height: 26px;
 }
 
+.feature-row h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .feature-row p {
   margin: 0;
   font-size: 16px;
@@ -2542,7 +2547,7 @@ th {
 
   .feature-band {
     padding-top: 36px;
-    padding-bottom: 36px;
+    padding-bottom: calc(48px + var(--wave-height));
   }
 
   .feature-row {
@@ -2640,8 +2645,13 @@ th {
   }
 
   .trust {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-40);
+    grid-template-columns: repeat(3, 340px);
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .trust li {
+    justify-content: center;
   }
 
   .trust li.trust__hours {
@@ -3103,6 +3113,18 @@ th {
   font-weight: 700;
   line-height: 20px;
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .trust-strip {
+    background-color: var(--color-cream);
+    background-image: url("../assets/waves/CLEAN-mobile-to-white.svg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
 }
 
 @media (max-width: 767px) {
