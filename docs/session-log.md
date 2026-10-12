@@ -240,3 +240,9 @@ The menu button is a 48px cream tile with a navy icon, and the close button uses
 Subpage hero labels are #FA5C3B. The Home hero counter is unchanged.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Hall of Fame labels
+
+“Standouts” and “SPM alumni”, and the lines under them, are centred with the headings. The standouts line uses an em dash.
+
+— Sage (Second)
