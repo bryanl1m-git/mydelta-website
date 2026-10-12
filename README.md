@@ -4,12 +4,25 @@ Static marketing site for MyDelta Academy in Bandar Botanik, Klang. Six pages, p
 
 ## Pages
 
-- `site/index.html` — Home (manual 3-slide hero, no autoplay)
-- `site/about.html` — About Us
-- `site/primary-daycare.html` — Primary Daycare
-- `site/public-speaking.html` — Public Speaking
-- `site/hall-of-fame.html` — Hall of Fame placeholders
-- `site/contact.html` — Contact, WhatsApp / email fallback
+Clean URLs: each page is written as `<path>/index.html`, and links are root-absolute (`/about`, not `about.html`).
+
+- `site/index.html` — Home, `/` (manual 3-slide hero, no autoplay)
+- `site/about/index.html` — About Us, `/about`
+- `site/primary-daycare/index.html` — Primary Daycare, `/primary-daycare`
+- `site/public-speaking/index.html` — Public Speaking, `/public-speaking`
+- `site/hall-of-fame/index.html` — Hall of Fame placeholders, `/hall-of-fame`
+- `site/contact/index.html` — Contact, WhatsApp / email fallback, `/contact`
+- `site/404.html`, `site/sitemap.xml`, `site/robots.txt` — generated too
+
+## Build options
+
+`scripts/assemble_pages.py` takes:
+
+- `--base-path` (or `BASE_PATH`), default `/`. The Pages workflow builds with `/mydelta-website/` so the project-URL preview keeps working.
+- `--site-url` (or `SITE_URL`), default `https://mydeltaedu.my`, used for canonical, og:url and the sitemap.
+- `--noindex` (or `NOINDEX=1`) for staging and previews: adds `<meta name="robots" content="noindex, nofollow">` and a `Disallow: /` robots.txt.
+
+Commit `site/` built with the defaults (production, base `/`). The PR check fails otherwise.
 
 ## Preview
 
@@ -20,7 +33,7 @@ python3 scripts/assemble_pages.py
 python3 -m http.server 8765 --directory site
 ```
 
-Then open `http://127.0.0.1:8765/`.
+Then open `http://127.0.0.1:8765/`. `python3 -m http.server` serves `/about/` but not `/about` without the slash; that is a preview-server limit, Firebase and GitHub Pages handle both.
 
 Shared header and footer live in `src/partials/`. Page sections live in `src/pages/`. Edit those, run the script, and commit both the sources and `site/*.html`. The Pages workflow uploads `site/` and does not run the script. Pull requests run the script and fail if the committed HTML does not match.
 
