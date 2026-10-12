@@ -264,3 +264,9 @@ On a phone, subpage section headings are 24px. “Find their voice” and “A h
 Our Story on the About page now carries the yellow wave into Our History, on a phone and on a wide screen.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Daycare lines on a phone
+
+Fact-tile times stay on one line, with an en dash, and the timetable time column is wide enough for “10.45-11.15am” on one line.
+
+— Sage (Second)
