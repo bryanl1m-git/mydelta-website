@@ -37,10 +37,6 @@ html {
   html {
     scroll-behavior: auto;
   }
-
-  .hero__toggle {
-    display: none;
-  }
 }
 
 body {
@@ -3305,5 +3301,9 @@ th {
   .mobile-menu {
     transition: none;
     transform: none;
+  }
+
+  .hero__toggle {
+    display: none;
   }
 }
