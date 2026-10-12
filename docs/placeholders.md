@@ -36,7 +36,6 @@ Icons are Simple Icons, used under CC0.
 - Logo: `site/assets/logo-delta.png`, the horizontal DELTA mark from the current site.
 - WhatsApp: https://wa.me/60126726140
 - Phone: 012-672 6140
-- Landline (contact page only): 03-3093 9524
 - Email: mydeltaedu@gmail.com
 - Address: 20, Jalan Mahogani 1, Bandar Botanik, 41200 Klang, Selangor
 
