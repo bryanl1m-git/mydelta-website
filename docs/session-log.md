@@ -288,3 +288,9 @@ Good to know is two columns on a wide screen. Student voice photos are 96px ther
 On a phone the Enquire button is full width, with “or WhatsApp us at 012-672 6140” under it. The visit sentence is unchanged. The Home footer labels the number “WhatsApp 012-672 6140”.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Home trust and features
+
+Primary Daycare and Public Speaking stay underlined. On a wide screen the trust items are centred in three columns, and the features band has more room before its wave. The trust band stays white. The outline medal, people, and microphone icons are still the current artwork.
+
+— Sage (Second)

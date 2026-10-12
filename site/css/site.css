@@ -2542,7 +2542,7 @@ th {
 
   .feature-band {
     padding-top: 36px;
-    padding-bottom: 36px;
+    padding-bottom: calc(48px + var(--wave-height));
   }
 
   .feature-row {
@@ -2640,8 +2640,13 @@ th {
   }
 
   .trust {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-40);
+    grid-template-columns: repeat(3, 340px);
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .trust li {
+    justify-content: center;
   }
 
   .trust li.trust__hours {
