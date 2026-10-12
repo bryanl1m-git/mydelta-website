@@ -180,3 +180,15 @@ The yellow “35 years” circle is gone from the Home welcome band. The Home ga
 The Home welcome band uses the ribbon badge, basket, and bird. On a wide screen the badge is 236×323 at left 222, top 140, the copy block is 508 wide at x540, the basket is 188×188 at 1084, 251, and the bird is 166×166 at 31, 449. Below 900px the basket is hidden, the badge is 116×159 and centred, and the bird is the small corner mark. The band is only as tall as that art. The welcome sentences are unchanged.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Contact visit heading
+
+“Visit us in Bandar Botanik” is 22px. It stays on one line at 1440 and at 390, and can wrap only if the line is narrower than the words.
+
+— Sage (Second)
+
+## 12 Oct 2026 — Landline removed
+
+The landline is gone from Contact. The mobile number 012-672 6140 and the WhatsApp link stay. Header, footer, and menu did not list a landline, and there is no JSON-LD phone field.
+
+— Sage (Second)
