@@ -1111,8 +1111,7 @@ body.menu-open {
 }
 
 @media (min-width: 1100px) {
-  body.page-speaking #glance-heading,
-  body.page-speaking #schedule-heading,
+  body.page-speaking #sat-heading,
   body.page-speaking #gain-heading,
   body.page-speaking #voices-heading,
   body.page-speaking #speaking-gallery-heading,
@@ -1475,6 +1474,139 @@ body.menu-open {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+}
+
+.sat-intro {
+  margin: 0 0 24px;
+  color: var(--color-body);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.slot-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 20px;
+  background: var(--color-white);
+  border-radius: var(--radius-tile);
+}
+
+.slot-card__label,
+.slot-card__time,
+.slot-card__group,
+.slot-card__dur {
+  margin: 0;
+}
+
+.slot-card__label {
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.slot-card__time {
+  color: var(--color-heading);
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.slot-card__group {
+  color: var(--color-body);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.slot-card__dur {
+  display: inline-flex;
+  margin-top: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: #f5f0e6;
+  color: #595966;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sat-cta {
+  margin: 24px 0 0;
+}
+
+.sat-cta .btn {
+  width: 100%;
+  min-height: 55px;
+  padding: 0 24px;
+}
+
+@media (min-width: 1100px) {
+  .slot-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  #sat-heading {
+    margin-bottom: 24px;
+  }
+
+  .sat-intro {
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .slot-card {
+    padding: 32px 40px;
+    gap: 8px;
+  }
+
+  .slot-card__time {
+    font-size: 44px;
+  }
+
+  .slot-card__group {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .sat-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .sat-cta .btn {
+    width: auto;
+    min-width: 262px;
+    padding-inline: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  #saturday-classes {
+    padding-top: 32px;
+  }
+
+  .sat-intro {
+    margin-bottom: 16px;
+  }
+
+  .slot-grid {
+    gap: 12px;
+  }
 }
 
 .voice-grid {
