@@ -297,6 +297,6 @@ Primary Daycare and Public Speaking stay underlined. On a wide screen the trust 
 
 ## 12 Oct 2026 — Home story frame and What We Do
 
-A dashed navy frame sits behind the Our Story photo on a wide screen. On a phone, Learn More is full width, What We Do is the heading, the collage, then the copy, and the parent heading comes before the intro line. What We Do keeps its cream band and the current paragraph, and adds the bold line. Its checks are navy circles.
+A dashed navy frame sits behind the Our Story photo on a wide screen. On a phone, Learn More is full width, What We Do is the heading, the collage, then the copy, and the parent heading comes before the intro line. What We Do is a white band with no wave. The current paragraph stays, and the bold line and navy checks are added.
 
 — Sage (Second)
