@@ -174,3 +174,9 @@ The hidden label on each social link is the network name only: Facebook, Instagr
 The yellow “35 years” circle is gone from the Home welcome band. The Home gallery heading is centred. The words stay “Gallery”, and the other headings stay left aligned.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Contact visit heading
+
+“Visit us in Bandar Botanik” is 22px. It stays on one line at 1440 and at 390, and can wrap only if the line is narrower than the words.
+
+— Sage (Second)

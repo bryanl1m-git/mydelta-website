@@ -1982,6 +1982,11 @@ th {
   color: var(--color-heading);
 }
 
+#location-heading {
+  font-size: 22px;
+  line-height: 28px;
+}
+
 /* Footer. Home is #384C86. Subpages are #20409A. The home hours
    and social row is the 390 frame only. */
 .footer-home {
