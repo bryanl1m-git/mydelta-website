@@ -306,3 +306,9 @@ A dashed navy frame with a #CCD4E5 fill sits behind the Our Story photo on a wid
 On a phone, the Home hero cream continues below the WhatsApp button, with space before the four highlight lines. Our Story has space above the checklist and above Learn More. What We Do is white, and the wave above it is gone. Testimonial avatars and names sit inside the cards, 24px from the card edge. The side cards stay white and the middle card stays yellow, and the quote marks are dark enough to read on both. Contact has a gap between WhatsApp Us and the Phone card.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Welcome bird
+
+The Welcome bird-and-cloud image is 166×166 with a transparent background. The filename is unchanged.
+
+— Sage (Second)
