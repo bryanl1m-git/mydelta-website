@@ -222,3 +222,9 @@ Below 1100px the Speaking section padding is 21px, so the phone page is about 37
 The daycare introduction uses the speaking overview pattern. The classroom photo is on the left, the heading is “A home away from home”, and three outlined tiles sit under the lead. On a phone the heading comes first, then the photo, then the lead and the tiles.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Home hero size
+
+On a wide screen the Home hero is 520px tall, with 40px of padding above and below a 620×440 photo. The copy column is 600px. The phone hero is unchanged. The copy lines up with the top of the photo, so the slide counter sits level with it.
+
+— Sage (Second)
