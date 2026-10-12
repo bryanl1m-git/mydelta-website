@@ -297,15 +297,18 @@ a {
 .nav-toggle {
   display: none;
   place-items: center;
+  border-radius: 12px;
+  background: #f9f6ef;
+  color: #20409a;
 }
 
 .nav-toggle__bars,
 .nav-toggle__bars::before,
 .nav-toggle__bars::after {
   display: block;
-  width: 22px;
+  width: 24px;
   height: 2px;
-  background: var(--color-navy);
+  background: #20409a;
   border-radius: var(--radius-full);
 }
 
@@ -2197,6 +2200,10 @@ th {
   background: #0d2659;
 }
 
+.footer-social {
+  display: none;
+}
+
 .site-footer .footer-bar {
   background: var(--color-heading);
 }
@@ -2775,6 +2782,25 @@ th {
   .hero .btn,
   .mobile-menu .btn {
     width: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  body:not(.page-home) .footer-social {
+    display: block;
+    padding: 0 24px 28px;
+  }
+
+  body:not(.page-home) .footer-social .social-list--circles .social-link {
+    background: #0d2659;
+  }
+
+  body:not(.page-home) .footer-bar p {
+    padding-bottom: 16px;
+  }
+
+  .navbar {
+    box-shadow: 0 2px 4px rgba(32, 64, 153, 0.12);
   }
 }
 
