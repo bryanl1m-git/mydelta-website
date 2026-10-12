@@ -2397,7 +2397,9 @@ th {
 
   .what-we-do {
     grid-template-columns: minmax(0, 1fr) 550px;
+    grid-template-rows: auto 1fr;
     column-gap: 40px;
+    row-gap: 20px;
     align-items: start;
   }
 
@@ -2411,6 +2413,10 @@ th {
     grid-column: 1;
   }
 
+  .what-we-do-copy {
+    align-self: start;
+  }
+
   .home-story-layout::before {
     content: "";
     position: absolute;
@@ -2419,6 +2425,7 @@ th {
     top: -15px;
     width: 547px;
     height: 408px;
+    background: #ccd4e5;
     border: 1.5px dashed rgba(32, 64, 154, 0.4);
     border-radius: 24px;
     pointer-events: none;
