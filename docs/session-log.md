@@ -252,3 +252,9 @@ Subpage hero labels are #FA5C3B. The Home hero counter is unchanged.
 The Home gallery heading is “Be part of the family!”. On a wide screen the house and teddy sit on that band. They stay hidden on a phone.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Mobile section headings
+
+On a phone, subpage section headings are 24px. “Find their voice” and “A home away from home” stay 28px. Home headings stay 32px, including Our Story. Desktop sizes are unchanged.
+
+— Sage (Second)
