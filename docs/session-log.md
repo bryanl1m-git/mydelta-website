@@ -192,3 +192,9 @@ The Home welcome band uses the ribbon badge, basket, and bird. On a wide screen 
 The landline is gone from Contact. The mobile number 012-672 6140 and the WhatsApp link stay. Header, footer, and menu did not list a landline, and there is no JSON-LD phone field.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Hall of Fame headings
+
+“Top of the class” and “More of our stars” are centred. Card text stays centred. The other Hall of Fame lines stay left aligned.
+
+— Sage (Second)
