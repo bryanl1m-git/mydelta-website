@@ -2,7 +2,9 @@
   MyDelta behaviour.
 
   Wired:
-  - Manual hero slider. Three slides, previous / next / dots, no autoplay.
+  - Hero slider. Three slides, previous / next / dots, and a 5s autoplay
+    when data-autoplay is "on". Hover, focus, a hidden tab, and the
+    Pause button stop it. Reduced motion never starts it.
   - Mobile menu: focus trap, inert page, Escape, focus returned to the toggle.
 
   The slider crossfade is 450ms in CSS, or instant under prefers-reduced-motion.
@@ -165,15 +167,24 @@
   function initSlider() {
     var hero = document.querySelector("[data-slider]");
     if (!hero) return;
-    /* data-autoplay is ignored. This slider never advances on a timer. */
+    /* data-autoplay="on" advances with data-interval (default 5000ms). */
+    var autoplay = hero.dataset.autoplay === "on";
+    var interval = parseInt(hero.dataset.interval, 10) || 5000;
     var slides = hero.querySelectorAll("[data-slide]");
     var dots = hero.querySelectorAll(".hero__dots button");
     var prev = hero.querySelector("[data-slider-prev]");
     var next = hero.querySelector("[data-slider-next]");
+    var toggle = hero.querySelector("[data-slider-toggle]");
     var chip = hero.querySelector("[data-slider-chip]");
     var status = hero.querySelector("[data-slider-status]");
     var count = slides.length;
     var index = 0;
+    var timer = 0;
+    var userStopped = false;
+    var hoverPaused = false;
+    var focusPaused = false;
+    var touchPaused = false;
+    var motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (!count) return;
 
     for (var i = 0; i < count; i++) {
@@ -215,25 +226,128 @@
       }
     }
 
+    function reduced() {
+      return motion.matches;
+    }
+
+    function clearTimer() {
+      if (timer) {
+        window.clearTimeout(timer);
+        timer = 0;
+      }
+    }
+
+    function live(mode) {
+      if (status) status.setAttribute("aria-live", mode);
+    }
+
+    function setToggle(stopped) {
+      if (!toggle) return;
+      toggle.setAttribute("aria-pressed", stopped ? "true" : "false");
+      toggle.setAttribute("aria-label", stopped ? "Play slideshow" : "Pause slideshow");
+    }
+
+    /* ignoreHold lets a manual next/prev start a full interval even while
+       a control inside the hero is focused. The following interval obeys
+       hover, focus, and touch again. */
+    function schedule(ignoreHold) {
+      clearTimer();
+      if (!autoplay || reduced() || userStopped || document.hidden) return;
+      if (!ignoreHold && (hoverPaused || focusPaused || touchPaused)) return;
+      live("off");
+      timer = window.setTimeout(function () {
+        timer = 0;
+        if (!autoplay || reduced() || userStopped || document.hidden) return;
+        if (!ignoreHold && (hoverPaused || focusPaused || touchPaused)) return;
+        show(index + 1, false, false);
+        schedule(false);
+      }, interval);
+    }
+
+    function arm() {
+      schedule(false);
+    }
+
+    function restart() {
+      /* A manual move starts a fresh interval. The pointer or focus that
+         came with that move must not cancel it. Entering again still pauses. */
+      focusPaused = false;
+      hoverPaused = false;
+      touchPaused = false;
+      schedule(false);
+    }
+
     show(0, false, false);
+    if (autoplay && !reduced()) arm();
+    else live("polite");
 
     if (prev) {
       prev.addEventListener("click", function () {
         show(index - 1, false, true);
+        restart();
       });
     }
     if (next) {
       next.addEventListener("click", function () {
         show(index + 1, false, true);
+        restart();
       });
     }
     for (var d = 0; d < dots.length; d++) {
       (function (dotIndex) {
         dots[dotIndex].addEventListener("click", function () {
           show(dotIndex, false, true);
+          restart();
         });
       })(d);
     }
+
+    if (toggle) {
+      toggle.addEventListener("click", function () {
+        if (!autoplay || reduced()) return;
+        userStopped = !userStopped;
+        setToggle(userStopped);
+        if (userStopped) {
+          clearTimer();
+          live("polite");
+        } else {
+          restart();
+        }
+      });
+    }
+
+    hero.addEventListener("mouseenter", function () {
+      hoverPaused = true;
+      clearTimer();
+    });
+    hero.addEventListener("mouseleave", function () {
+      hoverPaused = false;
+      arm();
+    });
+    hero.addEventListener("focusin", function () {
+      focusPaused = true;
+      clearTimer();
+    });
+    hero.addEventListener("focusout", function (event) {
+      if (hero.contains(event.relatedTarget)) return;
+      focusPaused = false;
+      arm();
+    });
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) clearTimer();
+      else arm();
+    });
+
+    function onMotion() {
+      if (reduced()) {
+        clearTimer();
+        live("polite");
+      } else {
+        arm();
+      }
+    }
+    if (motion.addEventListener) motion.addEventListener("change", onMotion);
+    else if (motion.addListener) motion.addListener(onMotion);
 
     hero.addEventListener("keydown", function (event) {
       if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
@@ -244,6 +358,7 @@
       event.preventDefault();
       var fromDot = target.parentNode && target.parentNode.classList.contains("hero__dots");
       show(index + (event.key === "ArrowRight" ? 1 : -1), fromDot, true);
+      restart();
     });
 
     var tracking = false;
@@ -255,6 +370,8 @@
     var startTarget = null;
 
     hero.addEventListener("touchstart", function (event) {
+      touchPaused = true;
+      clearTimer();
       if (event.touches.length !== 1) {
         tracking = false;
         return;
@@ -280,18 +397,16 @@
     }, { passive: false });
 
     function endSwipe() {
-      if (!tracking) return;
-      var horizontal = axis === "x" && Math.abs(deltaX) >= 40;
+      var horizontal = tracking && axis === "x" && Math.abs(deltaX) >= 40;
       var onControl = startTarget && startTarget.closest && startTarget.closest("button, a");
       tracking = false;
-      if (!horizontal || onControl) return;
-      show(index + (deltaX < 0 ? 1 : -1), false, true);
+      touchPaused = false;
+      if (horizontal && !onControl) show(index + (deltaX < 0 ? 1 : -1), false, true);
+      restart();
     }
 
     hero.addEventListener("touchend", endSwipe);
-    hero.addEventListener("touchcancel", function () {
-      tracking = false;
-    });
+    hero.addEventListener("touchcancel", endSwipe);
   }
 
   initSlider();

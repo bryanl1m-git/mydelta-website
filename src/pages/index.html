@@ -1,4 +1,4 @@
-<section class="hero" data-slider="manual-3" data-autoplay="off" aria-roledescription="carousel" aria-label="Programme highlights">
+<section class="hero" data-slider="manual-3" data-autoplay="on" data-interval="5000" aria-roledescription="carousel" aria-label="Programme highlights">
   <div class="wrap">
     <div class="hero__stage">
       <div class="hero__slides">
@@ -62,6 +62,10 @@
           <button type="button" class="hero__arrow hero__arrow--next" data-slider-next>
             <span class="visually-hidden">Next slide</span>
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.3 5.3a1 1 0 0 1 1.4 0l5 5a1 1 0 0 1 0 1.4l-5 5a1 1 0 0 1-1.4-1.4l4.3-4.3-4.3-4.3a1 1 0 0 1 0-1.4z"/></svg>
+          </button>
+          <button type="button" class="hero__toggle" data-slider-toggle aria-label="Pause slideshow" aria-pressed="false">
+            <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 5h3.2v14H7zM13.8 5H17v14h-3.2z"/></svg>
+            <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z"/></svg>
           </button>
           <div class="hero__dots" role="group" aria-label="Choose a slide">
             <button type="button" class="is-active" aria-current="true" aria-label="Slide 1 of 3"></button>
