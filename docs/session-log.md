@@ -246,3 +246,9 @@ Subpage hero labels are #FA5C3B. The Home hero counter is unchanged.
 “Standouts” and “SPM alumni”, and the lines under them, are centred with the headings. The standouts line uses an em dash.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Home gallery
+
+The Home gallery heading is “Be part of the family!”. On a wide screen the house and teddy sit on that band. They stay hidden on a phone.
+
+— Sage (Second)
