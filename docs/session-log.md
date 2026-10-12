@@ -231,6 +231,6 @@ On a wide screen the Home hero is 520px tall, with 40px of padding above and bel
 
 ## 12 Oct 2026 — Mobile menu tile and footer social
 
-The menu button is a 48px cream tile with a navy icon. On a phone, subpage footers keep the copyright line and add the four social circles. The Home footer is unchanged.
+The menu button is a 48px cream tile with a navy icon, and the close button uses the same cream tile. On a phone, subpage footers keep the copyright line and add the four social circles. The Home footer is unchanged.
 
 — Sage (Second)

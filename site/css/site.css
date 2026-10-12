@@ -329,9 +329,9 @@ a {
 .menu-close {
   display: grid;
   place-items: center;
-  border-radius: var(--radius-full);
-  background: var(--color-navy);
-  color: var(--color-white);
+  border-radius: 12px;
+  background: #f9f6ef;
+  color: #20409a;
   font-size: 32px;
   line-height: 1;
 }
