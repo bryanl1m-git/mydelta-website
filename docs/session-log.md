@@ -276,3 +276,9 @@ Fact-tile times stay on one line, with an en dash, and the timetable time column
 Good to know is two columns on a wide screen. Student voice photos are 96px there and 64px on a phone. On a phone the overview is the heading, then the photo, then the lead and tiles. The hero line is the Figma sentence.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Contact spacing
+
+“Ways to reach us” is 32px on a wide screen. The WhatsApp button sits clear of the cards. On a phone the line under the heading is only the hours. The location band has a straight top, a semibold address, and the hours in navy below it. The map embed is unchanged.
+
+— Sage (Second)
