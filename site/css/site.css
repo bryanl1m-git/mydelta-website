@@ -3116,18 +3116,6 @@ th {
 }
 
 @media (max-width: 767px) {
-  .trust-strip {
-    background-color: var(--color-cream);
-    background-image: url("../assets/waves/CLEAN-mobile-to-white.svg");
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100% 20px;
-    padding-top: 20px;
-    padding-bottom: 40px;
-  }
-}
-
-@media (max-width: 767px) {
   .ways-lead--wide { display: none; }
   .ways-lead--narrow { display: block; }
 
