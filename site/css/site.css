@@ -3,9 +3,10 @@
   Shared header, footer, and page skeletons. Uses tokens.css only for values.
 
   Session 2:
-  - Hero slider is manual: previous, next, and dots, plus Left/Right keys.
-    No autoplay. Desktop arrows are 48px with a 16px inset, with the
-    01 / 03 counter in the eyebrow. Below 1100px the arrows are hidden,
+  - Hero slider: previous, next, dots, and Left/Right keys, plus a 5s
+    autoplay that pauses on hover, focus, and a hidden tab. Desktop
+    arrows are 48px with a 16px inset, with the 01 / 03 counter in the
+    eyebrow. Below 1100px the arrows are hidden,
     dots sit under the photo, and an N / 3 chip sits on the photo.
     Swipe threshold is 40px. The crossfade is 450ms, or instant when
     prefers-reduced-motion is set.
@@ -640,6 +641,46 @@ body.menu-open {
   display: none;
 }
 
+.hero__toggle {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  color: var(--color-slider-arrow);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.hero__toggle:hover {
+  color: var(--color-heading);
+}
+
+.hero__toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.hero__toggle .icon-play {
+  display: none;
+}
+
+.hero__toggle[aria-pressed="true"] .icon-pause {
+  display: none;
+}
+
+.hero__toggle[aria-pressed="true"] .icon-play {
+  display: block;
+}
+
 .hero__dots {
   position: absolute;
   top: 100%;
@@ -909,13 +950,23 @@ body.menu-open {
   }
 
   .timetable-card--morning {
-    flex: 784 1 0;
-    max-width: 784px;
+    flex: 1 1 720px;
+    max-width: none;
   }
 
   .timetable-card--afternoon {
-    flex: 312 1 0;
-    max-width: 312px;
+    flex: 0 0 376px;
+    max-width: 376px;
+  }
+
+  .timetable-card--afternoon .timetable-chips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+  }
+
+  .timetable-card--afternoon .timetable-chips li {
+    min-width: 0;
   }
 
   .timetable-chips {
@@ -1828,6 +1879,15 @@ body.menu-open {
   font-weight: 700;
 }
 
+/* Beats `.what-we-do-copy p { margin: 0 }` so the 16px gap is visible. */
+.what-we-do-copy .what-we-do-line {
+  margin-top: 16px;
+}
+
+.what-we-do-copy .checks {
+  margin-top: 20px;
+}
+
 .home-story-layout {
   position: relative;
   display: grid;
@@ -1849,7 +1909,7 @@ body.menu-open {
 .story-checks {
   display: grid;
   gap: 10px;
-  margin: 4px 0 0;
+  margin: 16px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -1875,7 +1935,7 @@ body.menu-open {
 
 .home-story-copy .btn {
   justify-self: start;
-  margin-top: 4px;
+  margin-top: 24px;
 }
 
 .review {
@@ -2480,25 +2540,7 @@ th {
 
   .gallery-house,
   .gallery-teddy {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-    object-fit: contain;
-  }
-
-  .gallery-house {
-    top: 37px;
-    left: min(calc(50% - 720px + 1197px), calc(100% - 164px));
-    width: 164px;
-    height: 205px;
-  }
-
-  .gallery-teddy {
-    top: 487px;
-    left: max(0px, calc(50% - 720px + 74px));
-    width: 146px;
-    height: 204px;
+    display: none;
   }
 
   .hero {
@@ -3104,6 +3146,31 @@ th {
   }
 }
 
+@media (min-width: 1400px) {
+  .gallery-house,
+  .gallery-teddy {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+  }
+
+  .gallery-house {
+    top: 120px;
+    left: calc(50% + 560px + 16px);
+    width: 120px;
+    height: 150px;
+  }
+
+  .gallery-teddy {
+    top: 541px;
+    left: calc(50% - 560px - 16px - 100px);
+    width: 100px;
+    height: 140px;
+  }
+}
+
 @media (max-width: 767px) {
   body:not(.page-home) .footer-social {
     display: block;
@@ -3162,14 +3229,6 @@ th {
 
   .trust-strip {
     padding-top: 16px;
-  }
-
-  .story-checks {
-    margin-top: 16px;
-  }
-
-  .home-story-copy .btn {
-    margin-top: 16px;
   }
 
   .quotes__item {
@@ -3392,5 +3451,9 @@ th {
   .mobile-menu {
     transition: none;
     transform: none;
+  }
+
+  .hero__toggle {
+    display: none;
   }
 }
