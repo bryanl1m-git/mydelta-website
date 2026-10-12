@@ -1696,6 +1696,15 @@ body.menu-open {
   font-weight: 700;
 }
 
+/* Beats `.what-we-do-copy p { margin: 0 }` so the 16px gap is visible. */
+.what-we-do-copy .what-we-do-line {
+  margin-top: 16px;
+}
+
+.what-we-do-copy .checks {
+  margin-top: 20px;
+}
+
 .home-story-layout {
   position: relative;
   display: grid;
@@ -1717,7 +1726,7 @@ body.menu-open {
 .story-checks {
   display: grid;
   gap: 10px;
-  margin: 4px 0 0;
+  margin: 16px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -1743,7 +1752,7 @@ body.menu-open {
 
 .home-story-copy .btn {
   justify-self: start;
-  margin-top: 4px;
+  margin-top: 24px;
 }
 
 .review {
@@ -3030,14 +3039,6 @@ th {
 
   .trust-strip {
     padding-top: 16px;
-  }
-
-  .story-checks {
-    margin-top: 16px;
-  }
-
-  .home-story-copy .btn {
-    margin-top: 16px;
   }
 
   .quotes__item {
