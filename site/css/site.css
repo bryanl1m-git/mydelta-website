@@ -2896,7 +2896,7 @@ th {
     padding-bottom: 134px;
   }
 
-  .band--cream.curve-to-orange {
+  .band--white.curve-to-orange {
     background-image: none;
     padding-bottom: var(--section-pad);
   }
@@ -3019,8 +3019,45 @@ th {
     width: 100%;
   }
 
+  .ways .btn {
+    margin-bottom: 16px;
+  }
+
   .hero {
     padding-top: 0;
+    padding-bottom: 24px;
+  }
+
+  .trust-strip {
+    padding-top: 16px;
+  }
+
+  .story-checks {
+    margin-top: 16px;
+  }
+
+  .home-story-copy .btn {
+    margin-top: 16px;
+  }
+
+  .quotes__item {
+    display: grid;
+  }
+
+  .quotes__card,
+  .quotes__by {
+    grid-area: 1 / 1;
+  }
+
+  .quotes__card {
+    padding-bottom: 84px;
+  }
+
+  .quotes__by {
+    align-self: end;
+    margin: 0;
+    padding: 0 24px 24px;
+    z-index: 1;
   }
 
   .hero__layout {
