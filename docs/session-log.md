@@ -300,3 +300,9 @@ Primary Daycare and Public Speaking stay underlined. On a wide screen the trust 
 A dashed navy frame with a #CCD4E5 fill sits behind the Our Story photo on a wide screen. On a phone, Learn More is full width, What We Do is the heading, the collage, then the copy, and the parent heading comes before the intro line. On a wide screen the What We Do copy starts 20px under the heading. What We Do is a white band with no wave. The current paragraph stays, and the bold line and navy checks are added.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Mobile polish
+
+On a phone, the Home hero cream continues below the WhatsApp button, with space before the four highlight lines. Our Story has space above the checklist and above Learn More. What We Do is white, and the wave above it is gone. Testimonial avatars and names sit inside the cards. Contact has a gap between WhatsApp Us and the Phone card.
+
+— Sage (Second)

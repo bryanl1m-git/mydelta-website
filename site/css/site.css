@@ -2896,7 +2896,7 @@ th {
     padding-bottom: 134px;
   }
 
-  .band--cream.curve-to-orange {
+  .band--white.curve-to-orange {
     background-image: none;
     padding-bottom: var(--section-pad);
   }
@@ -3019,8 +3019,29 @@ th {
     width: 100%;
   }
 
+  .ways .btn {
+    margin-bottom: 16px;
+  }
+
   .hero {
     padding-top: 0;
+    padding-bottom: 24px;
+  }
+
+  .trust-strip {
+    padding-top: 16px;
+  }
+
+  .story-checks {
+    margin-top: 16px;
+  }
+
+  .home-story-copy .btn {
+    margin-top: 16px;
+  }
+
+  .quotes__by {
+    margin-top: -60px;
   }
 
   .hero__layout {
