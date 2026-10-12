@@ -210,3 +210,9 @@ Below 1100px the speaking tiles use a 16px title and a 14px body. Tile padding a
 The Home story heading is “Our Story” at 40px, with no eyebrow. On a wide screen the photo is on the left and the copy is on the right. The paragraph is the Figma sentence, followed by Compassion, Commitment, and Competence in filled check circles. On a phone the heading comes first, then the photo, then the copy. Learn More stays.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Speaking page height
+
+Below 1100px the Speaking section padding is 21px, so the phone page is about 3778px. Copy and the desktop layout stay as they are.
+
+— Sage (Second)
