@@ -1758,6 +1758,7 @@ th {
 .hof-block h2 {
   font-size: 32px;
   line-height: 38px;
+  text-align: center;
 }
 
 .hof-sub {
@@ -1840,6 +1841,7 @@ th {
 .hof-card p {
   margin: 0;
   padding-inline: 12px;
+  text-align: center;
 }
 
 .hof-note {
