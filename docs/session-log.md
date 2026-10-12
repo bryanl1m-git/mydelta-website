@@ -225,6 +225,6 @@ The daycare introduction uses the speaking overview pattern. The classroom photo
 
 ## 12 Oct 2026 — Home hero size
 
-On a wide screen the Home hero is 520px tall, with 40px of padding above and below a 620×440 photo. The copy column is 600px. The phone hero is unchanged.
+On a wide screen the Home hero is 520px tall, with 40px of padding above and below a 620×440 photo. The copy column is 600px. The phone hero is unchanged. The copy lines up with the top of the photo, so the slide counter sits level with it.
 
 — Sage (Second)

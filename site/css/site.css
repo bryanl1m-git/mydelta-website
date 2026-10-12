@@ -2277,7 +2277,7 @@ th {
   .hero__layout {
     grid-template-columns: minmax(0, 1fr) 620px;
     column-gap: 40px;
-    align-items: center;
+    align-items: start;
   }
 
   .hero__photo {
