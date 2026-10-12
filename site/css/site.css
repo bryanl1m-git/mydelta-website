@@ -1288,8 +1288,14 @@ body.menu-open {
   background-image: none;
 }
 
-.speaking-overview-split .speaking-overview {
-  order: 2;
+.speaking-overview-layout {
+  display: grid;
+  gap: 16px;
+}
+
+.speaking-overview-layout h2,
+.speaking-overview-layout .speaking-lead {
+  margin: 0;
 }
 
 .daycare-overview-layout {
@@ -1437,9 +1443,9 @@ body.menu-open {
 }
 
 .voice-card .voice-photo {
-  flex: 0 0 56px;
-  width: 56px;
-  height: 56px;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
   margin: 0;
 }
 
@@ -2399,13 +2405,33 @@ th {
     line-height: 24px;
   }
 
-  .split.speaking-overview-split {
+  .speaking-overview-layout {
     grid-template-columns: 536px minmax(0, 1fr);
+    column-gap: 40px;
+    row-gap: 16px;
     align-items: start;
   }
 
-  .speaking-overview-split .speaking-overview {
-    order: 0;
+  .speaking-overview-layout .speaking-overview {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+  }
+
+  .speaking-overview-layout h2,
+  .speaking-overview-layout .speaking-lead,
+  .speaking-overview-layout .speaking-points {
+    grid-column: 2;
+  }
+
+  .know-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .voice-card .voice-photo {
+    flex-basis: 96px;
+    width: 96px;
+    height: 96px;
   }
 
   .home-story { aspect-ratio: 550 / 434; border-radius: 38px; }

@@ -270,3 +270,9 @@ Our Story on the About page now carries the yellow wave into Our History, on a p
 Fact-tile times stay on one line, with an en dash, and the timetable time column is wide enough for “10.45-11.15am” on one line.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Speaking layout
+
+Good to know is two columns on a wide screen. Student voice photos are 96px there and 64px on a phone. On a phone the overview is the heading, then the photo, then the lead and tiles. The hero line is the Figma sentence.
+
+— Sage (Second)
