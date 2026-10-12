@@ -2348,25 +2348,7 @@ th {
 
   .gallery-house,
   .gallery-teddy {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-    object-fit: contain;
-  }
-
-  .gallery-house {
-    top: 37px;
-    left: min(calc(50% - 720px + 1197px), calc(100% - 164px));
-    width: 164px;
-    height: 205px;
-  }
-
-  .gallery-teddy {
-    top: 487px;
-    left: max(0px, calc(50% - 720px + 74px));
-    width: 146px;
-    height: 204px;
+    display: none;
   }
 
   .hero {
@@ -2969,6 +2951,31 @@ th {
   .hero .btn,
   .mobile-menu .btn {
     width: auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  .gallery-house,
+  .gallery-teddy {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+  }
+
+  .gallery-house {
+    top: 120px;
+    left: calc(50% + 560px + 16px);
+    width: 120px;
+    height: 150px;
+  }
+
+  .gallery-teddy {
+    top: 541px;
+    left: calc(50% - 560px - 16px - 100px);
+    width: 100px;
+    height: 140px;
   }
 }
 
