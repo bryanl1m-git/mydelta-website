@@ -258,3 +258,9 @@ The Home gallery heading is “Be part of the family!”. On a wide screen the h
 On a phone, subpage section headings are 24px. “Find their voice” and “A home away from home” stay 28px. Home headings stay 32px, including Our Story. Desktop sizes are unchanged.
 
 — Sage (Second)
+
+## 12 Oct 2026 — About history wave
+
+Our Story on the About page now carries the yellow wave into Our History, on a phone and on a wide screen.
+
+— Sage (Second)
