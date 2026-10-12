@@ -174,3 +174,9 @@ The hidden label on each social link is the network name only: Facebook, Instagr
 The yellow “35 years” circle is gone from the Home welcome band. The Home gallery heading is centred. The words stay “Gallery”, and the other headings stay left aligned.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Landline removed
+
+The landline is gone from Contact. The mobile number 012-672 6140 and the WhatsApp link stay. Header, footer, and menu did not list a landline, and there is no JSON-LD phone field.
+
+— Sage (Second)
