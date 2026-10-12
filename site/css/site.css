@@ -1276,6 +1276,42 @@ body.menu-open {
   order: 2;
 }
 
+.daycare-overview-layout {
+  display: grid;
+  gap: 16px;
+}
+
+.daycare-overview-layout h2,
+.daycare-overview-layout .speaking-lead {
+  margin: 0;
+}
+
+@media (max-width: 1099px) {
+  #daycare-overview-heading {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .daycare-overview-layout .speaking-lead {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .daycare-overview-layout .speaking-points {
+    gap: 16px;
+  }
+
+  .daycare-overview-layout .outline-tile {
+    padding: 18px;
+  }
+
+  .daycare-overview-layout .outline-tile h3 {
+    margin-bottom: 4px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
 .speaking-lead {
   color: var(--color-heading);
   font-size: 18px;
@@ -2264,8 +2300,35 @@ th {
     grid-template-columns: minmax(0, 1fr) 547px;
   }
 
-  .split:has(> .daycare-overview) {
-    grid-template-columns: minmax(0, 1fr) 536px;
+  .daycare-overview-layout {
+    grid-template-columns: 536px minmax(0, 536px);
+    column-gap: 40px;
+    row-gap: 16px;
+    align-items: start;
+  }
+
+  .daycare-overview-layout .daycare-overview {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+  }
+
+  .daycare-overview-layout h2,
+  .daycare-overview-layout .speaking-lead,
+  .daycare-overview-layout .speaking-points {
+    grid-column: 2;
+  }
+
+  .daycare-overview-layout .speaking-points {
+    gap: 16px;
+  }
+
+  .daycare-overview-layout .outline-tile {
+    padding: 18px;
+  }
+
+  .daycare-overview-layout .outline-tile h3 {
+    font-size: 18px;
+    line-height: 24px;
   }
 
   .split.speaking-overview-split {

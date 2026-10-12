@@ -216,3 +216,9 @@ The Home story heading is “Our Story” at 40px, with no eyebrow. On a wide sc
 Below 1100px the Speaking section padding is 21px, so the phone page is about 3778px. Copy and the desktop layout stay as they are.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Daycare overview
+
+The daycare introduction uses the speaking overview pattern. The classroom photo is on the left, the heading is “A home away from home”, and three outlined tiles sit under the lead. On a phone the heading comes first, then the photo, then the lead and the tiles.
+
+— Sage (Second)
