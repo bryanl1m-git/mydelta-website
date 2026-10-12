@@ -291,6 +291,6 @@ On a phone the Enquire button is full width, with “or WhatsApp us at 012-672 6
 
 ## 12 Oct 2026 — Home trust and features
 
-Feature titles are not underlined. On a wide screen the trust items are centred in three columns, and the features band has more room before its wave. The trust band stays white. The outline medal, people, and microphone icons are still the current artwork.
+Primary Daycare and Public Speaking stay underlined. On a wide screen the trust items are centred in three columns, and the features band has more room before its wave. The trust band stays white. The outline medal, people, and microphone icons are still the current artwork.
 
 — Sage (Second)
