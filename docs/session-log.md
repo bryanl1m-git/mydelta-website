@@ -175,6 +175,12 @@ The yellow “35 years” circle is gone from the Home welcome band. The Home ga
 
 — Sage (Second)
 
+## 12 Oct 2026 — Home Our Story
+
+The Home story heading is “Our Story” at 40px, with no eyebrow. On a wide screen the photo is on the left and the copy is on the right. The paragraph is the Figma sentence, followed by Compassion, Commitment, and Competence in filled check circles. On a phone the heading comes first, then the photo, then the copy. Learn More stays.
+
+— Sage (Second)
+
 ## 12 Oct 2026 — Landline removed
 
 The landline is gone from Contact. The mobile number 012-672 6140 and the WhatsApp link stay. Header, footer, and menu did not list a landline, and there is no JSON-LD phone field.
