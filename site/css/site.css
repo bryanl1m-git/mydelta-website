@@ -3001,6 +3001,34 @@ th {
   }
 }
 
+/* Phone section headings. Home stays 32/38, including Our Story.
+   Overview headings stay 28/38. Other subpage headings are 24/33. */
+@media (max-width: 767px) {
+  body:not(.page-home) {
+    --text-h2-size: 24px;
+    --text-h2-line: 33px;
+  }
+
+  body:not(.page-home) h2,
+  .hof-block h2,
+  #history-heading,
+  #life-heading {
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  #speaking-overview-heading,
+  #daycare-overview-heading {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  #story-heading {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero__slide,
   .mobile-menu {
