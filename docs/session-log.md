@@ -204,3 +204,9 @@ The landline is gone from Contact. The mobile number 012-672 6140 and the WhatsA
 Below 1100px the speaking tiles use a 16px title and a 14px body. Tile padding and the Student voices cards are tighter, so the phone page sits nearer the 3778px frame.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Home Our Story
+
+The Home story heading is “Our Story” at 40px, with no eyebrow. On a wide screen the photo is on the left and the copy is on the right. The paragraph is the Figma sentence, followed by Compassion, Commitment, and Competence in filled check circles. On a phone the heading comes first, then the photo, then the copy. Learn More stays.
+
+— Sage (Second)
