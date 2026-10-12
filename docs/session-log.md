@@ -198,3 +198,9 @@ The landline is gone from Contact. The mobile number 012-672 6140 and the WhatsA
 “Top of the class” and “More of our stars” are centred. Card text stays centred. The other Hall of Fame lines stay left aligned.
 
 — Sage (Second)
+
+## 12 Oct 2026 — Speaking tiles on a phone
+
+Below 1100px the speaking tiles use a 16px title and a 14px body. Tile padding and the Student voices cards are tighter, so the phone page sits nearer the 3778px frame.
+
+— Sage (Second)
