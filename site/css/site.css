@@ -1451,18 +1451,49 @@ body.menu-open {
   text-align: center;
 }
 
-.welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+/* Welcome band. Decor is positioned in the 1440 frame. On a phone the
+   badge sits centred above the copy and the bird is a small corner mark. */
+.band--welcome {
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: calc(12px + var(--wave-height));
+}
+
+.welcome-badge,
+.welcome-basket,
+.welcome-bird {
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.welcome-badge {
+  width: 116px;
+  height: 159px;
+  margin: 0 auto 16px;
+}
+
+.welcome-basket {
+  display: none;
+}
+
+.welcome-bird {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 72px;
+  height: 72px;
 }
 
 .welcome-copy {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 508px;
+  width: min(508px, calc(100% - 48px));
+  margin-inline: auto;
+  text-align: center;
 }
 
 .band--welcome h2 {
@@ -1480,28 +1511,53 @@ body.menu-open {
   line-height: 26px;
 }
 
-@media (max-width: 1099px) {
-  .band--welcome,
+@media (min-width: 900px) {
+  .band--welcome {
+    padding-top: 0;
+    padding-bottom: var(--wave-height);
+    min-height: 615px;
+  }
+
+  .welcome-badge {
+    position: absolute;
+    top: 140px;
+    left: max(16px, calc(50% - 720px + 222px));
+    width: 236px;
+    height: 323px;
+    margin: 0;
+  }
+
+  .welcome-basket {
+    display: block;
+    position: absolute;
+    top: 251px;
+    left: clamp(16px, calc(50% - 720px + 1084px), calc(100% - 188px - 16px));
+    width: 188px;
+    height: 188px;
+  }
+
+  .welcome-bird {
+    top: 449px;
+    left: max(0px, calc(50% - 720px + 31px));
+    right: auto;
+    width: 166px;
+    height: 166px;
+  }
+
   .welcome-copy {
-    text-align: center;
+    position: absolute;
+    top: 257px;
+    left: max(16px, calc(50% - 720px + 540px));
+    width: 508px;
+    margin: 0;
+    text-align: left;
   }
 }
 
 @media (min-width: 1100px) {
-  .welcome {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 64px;
-  }
-
   .band--welcome h2 {
     font-size: 36px;
     line-height: 36px;
-  }
-
-  .welcome-copy {
-    text-align: left;
   }
 
   .welcome-lead {
@@ -2029,6 +2085,11 @@ th {
   font-style: normal;
   font-weight: 700;
   color: var(--color-heading);
+}
+
+#location-heading {
+  font-size: 22px;
+  line-height: 28px;
 }
 
 /* Footer. Home is #384C86. Subpages are #20409A. The home hours
