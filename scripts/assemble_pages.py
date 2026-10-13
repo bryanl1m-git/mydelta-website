@@ -140,8 +140,11 @@ def icon_svg(name):
     if not match:
         sys.exit(f"Could not read icon {name}")
     inner = re.sub(r"<title>.*?</title>", "", match.group(1))
+    # Xiaohongshu's official mark is a wide wordmark. A square viewBox
+    # letterboxes it, so use the tight bounds of that path.
+    view_box = "0 7.714 24 8.574" if name == "xiaohongshu" else "0 0 24 24"
     return (
-        '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+        f'<svg class="icon icon--{name}" viewBox="{view_box}" aria-hidden="true" focusable="false">'
         + inner
         + "</svg>"
     )
@@ -151,12 +154,17 @@ def social_list(variant):
     items = []
     for label, url, name, pending in SOCIAL:
         placeholder = ' data-placeholder="social-pending"' if pending else ""
+        extra = " social-link--xiaohongshu" if name == "xiaohongshu" else ""
         items.append(
-            '<li><a class="social-link" href="{url}"{placeholder} '
+            '<li><a class="social-link{extra}" href="{url}"{placeholder} '
             'target="_blank" rel="noopener noreferrer">'
             '<span class="visually-hidden">{label}</span>'
             "{icon}</a></li>".format(
-                url=url, placeholder=placeholder, label=label, icon=icon_svg(name)
+                url=url,
+                extra=extra,
+                placeholder=placeholder,
+                label=label,
+                icon=icon_svg(name),
             )
         )
     return '<ul class="social-list social-list--{variant}">{items}</ul>'.format(

@@ -426,6 +426,21 @@ body.menu-open {
   fill: var(--color-white);
 }
 
+/* Official 小红书 wordmark. Same white colour as the other glyphs. In the header it matches their 18px height; in a circle it uses the circle's width. */
+.social-list--inline .social-link--xiaohongshu {
+  width: auto;
+}
+
+.social-list--inline .icon--xiaohongshu {
+  width: 48px;
+  height: auto;
+}
+
+.social-list--circles .icon--xiaohongshu {
+  width: 36px;
+  height: auto;
+}
+
 .social-link:hover {
   opacity: 0.8;
 }
@@ -2462,6 +2477,11 @@ th {
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+.footer-home .social-list--circles .icon--xiaohongshu {
+  width: 36px;
+  height: auto;
 }
 
 .footer-home .social-list--circles .social-link {
