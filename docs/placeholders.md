@@ -26,8 +26,6 @@ Marked in the header, footer, and mobile menu, and on each link with `data-place
 |---|---|---|
 | Facebook | https://facebook.com/profile.php?id=100091626355787 | Pending confirmation. Same profile as the current site. |
 | Instagram | https://www.instagram.com/mydeltaedu | Pending confirmation. |
-| TikTok | https://www.tiktok.com/@mydeltaedu | Placeholder from the design notes. |
-| Xiaohongshu | https://www.xiaohongshu.com/explore | Placeholder from the design notes. Not a confirmed profile. |
 
 Icons are Simple Icons, used under CC0.
 
@@ -36,6 +34,7 @@ Icons are Simple Icons, used under CC0.
 - Logo: `site/assets/logo-delta.png`, the horizontal DELTA mark from the current site.
 - WhatsApp: https://wa.me/60126726140
 - Phone: 012-672 6140
+- Xiaohongshu: https://xhslink.cn/m/9gdk3OmwT5C
 - Email: hello@mydeltaedu.my
 - Address: 20, Jalan Mahogani 1, Bandar Botanik, 41200 Klang, Selangor
 

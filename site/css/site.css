@@ -426,6 +426,22 @@ body.menu-open {
   fill: var(--color-white);
 }
 
+/* Desktop top bar. The wordmark is unreadable at 18×18, so its slot is 28×18 and the glyph is about 26×9. */
+.social-list--inline .social-link--xiaohongshu {
+  width: 28px;
+  height: 18px;
+}
+
+.social-list--inline .icon--xiaohongshu {
+  width: 26px;
+  height: auto;
+}
+
+.social-list--circles .icon--xiaohongshu {
+  width: 30px;
+  height: auto;
+}
+
 .social-link:hover {
   opacity: 0.8;
 }
@@ -2462,6 +2478,16 @@ th {
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+.footer-home .social-list--circles .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-home .social-list--circles .icon--xiaohongshu {
+  width: 30px;
+  height: auto;
 }
 
 .footer-home .social-list--circles .social-link {

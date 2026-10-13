@@ -23,10 +23,9 @@ OUT = ROOT / "site"
 WHATSAPP = "https://wa.me/60126726140?text=Hi%20MyDelta%2C%20I%27d%20like%20to%20enquire"
 
 SOCIAL = (
-    ("Facebook", "https://facebook.com/profile.php?id=100091626355787", "facebook"),
-    ("Instagram", "https://www.instagram.com/mydeltaedu", "instagram"),
-    ("TikTok", "https://www.tiktok.com/@mydeltaedu", "tiktok"),
-    ("Xiaohongshu", "https://www.xiaohongshu.com/explore", "xiaohongshu"),
+    ("Facebook", "https://facebook.com/profile.php?id=100091626355787", "facebook", True),
+    ("Instagram", "https://www.instagram.com/mydeltaedu", "instagram", True),
+    ("Xiaohongshu", "https://xhslink.cn/m/9gdk3OmwT5C", "xiaohongshu", False),
 )
 
 NAV_KEYS = ("home", "about", "daycare", "speaking", "hof", "contact")
@@ -141,8 +140,11 @@ def icon_svg(name):
     if not match:
         sys.exit(f"Could not read icon {name}")
     inner = re.sub(r"<title>.*?</title>", "", match.group(1))
+    # Xiaohongshu's official mark is a wide wordmark. A square viewBox
+    # letterboxes it, so use the tight bounds of that path.
+    view_box = "0 7.714 24 8.574" if name == "xiaohongshu" else "0 0 24 24"
     return (
-        '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+        f'<svg class="icon icon--{name}" viewBox="{view_box}" aria-hidden="true" focusable="false">'
         + inner
         + "</svg>"
     )
@@ -150,12 +152,20 @@ def icon_svg(name):
 
 def social_list(variant):
     items = []
-    for label, url, name in SOCIAL:
+    for label, url, name, pending in SOCIAL:
+        placeholder = ' data-placeholder="social-pending"' if pending else ""
+        extra = " social-link--xiaohongshu" if name == "xiaohongshu" else ""
         items.append(
-            '<li><a class="social-link" href="{url}" data-placeholder="social-pending" '
+            '<li><a class="social-link{extra}" href="{url}"{placeholder} '
             'target="_blank" rel="noopener noreferrer">'
             '<span class="visually-hidden">{label}</span>'
-            "{icon}</a></li>".format(url=url, label=label, icon=icon_svg(name))
+            "{icon}</a></li>".format(
+                url=url,
+                extra=extra,
+                placeholder=placeholder,
+                label=label,
+                icon=icon_svg(name),
+            )
         )
     return '<ul class="social-list social-list--{variant}">{items}</ul>'.format(
         variant=variant, items="".join(items)
