@@ -6,6 +6,15 @@ name: PR check
 
 on:
   pull_request:
+    # Docs-only changes cannot change site/. Any other change still runs the check.
+    paths-ignore:
+      - '**/*.md'
+      - 'docs/**'
+
+# A newer push to the same PR cancels the check it replaces (saves Actions minutes).
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
