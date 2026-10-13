@@ -23,10 +23,9 @@ OUT = ROOT / "site"
 WHATSAPP = "https://wa.me/60126726140?text=Hi%20MyDelta%2C%20I%27d%20like%20to%20enquire"
 
 SOCIAL = (
-    ("Facebook", "https://facebook.com/profile.php?id=100091626355787", "facebook"),
-    ("Instagram", "https://www.instagram.com/mydeltaedu", "instagram"),
-    ("TikTok", "https://www.tiktok.com/@mydeltaedu", "tiktok"),
-    ("Xiaohongshu", "https://www.xiaohongshu.com/explore", "xiaohongshu"),
+    ("Facebook", "https://facebook.com/profile.php?id=100091626355787", "facebook", True),
+    ("Instagram", "https://www.instagram.com/mydeltaedu", "instagram", True),
+    ("Xiaohongshu", "https://xhslink.cn/m/9gdk3OmwT5C", "xiaohongshu", False),
 )
 
 NAV_KEYS = ("home", "about", "daycare", "speaking", "hof", "contact")
@@ -150,12 +149,15 @@ def icon_svg(name):
 
 def social_list(variant):
     items = []
-    for label, url, name in SOCIAL:
+    for label, url, name, pending in SOCIAL:
+        placeholder = ' data-placeholder="social-pending"' if pending else ""
         items.append(
-            '<li><a class="social-link" href="{url}" data-placeholder="social-pending" '
+            '<li><a class="social-link" href="{url}"{placeholder} '
             'target="_blank" rel="noopener noreferrer">'
             '<span class="visually-hidden">{label}</span>'
-            "{icon}</a></li>".format(url=url, label=label, icon=icon_svg(name))
+            "{icon}</a></li>".format(
+                url=url, placeholder=placeholder, label=label, icon=icon_svg(name)
+            )
         )
     return '<ul class="social-list social-list--{variant}">{items}</ul>'.format(
         variant=variant, items="".join(items)
