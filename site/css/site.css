@@ -426,18 +426,19 @@ body.menu-open {
   fill: var(--color-white);
 }
 
-/* Official 小红书 wordmark. Same white colour as the other glyphs. In the header it matches their 18px height; in a circle it uses the circle's width. */
+/* Desktop top bar. The wordmark is unreadable at 18×18, so its slot is 28×18 and the glyph is about 26×9. */
 .social-list--inline .social-link--xiaohongshu {
-  width: auto;
+  width: 28px;
+  height: 18px;
 }
 
 .social-list--inline .icon--xiaohongshu {
-  width: 48px;
+  width: 26px;
   height: auto;
 }
 
 .social-list--circles .icon--xiaohongshu {
-  width: 36px;
+  width: 30px;
   height: auto;
 }
 
@@ -2479,8 +2480,13 @@ th {
   fill: currentColor;
 }
 
+.footer-home .social-list--circles .icon {
+  width: 22px;
+  height: 22px;
+}
+
 .footer-home .social-list--circles .icon--xiaohongshu {
-  width: 36px;
+  width: 30px;
   height: auto;
 }
 
