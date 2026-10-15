@@ -3336,6 +3336,16 @@ th {
   .hero__photo {
     border-radius: 0;
     min-height: 0;
+    /* One photo size for all slides so the controls can sit on it. */
+    width: min(100%, 507px);
+  }
+
+  /* Controls box matches the centred photo (full-bleed on phones), so the
+     pause button and dots stay on/under the photo at 520-1099px too. */
+  .hero__chrome {
+    left: 50%;
+    width: min(calc(100% + (var(--side-pad) * 2)), 507px);
+    transform: translateX(-50%);
   }
 
   .hero__index {
