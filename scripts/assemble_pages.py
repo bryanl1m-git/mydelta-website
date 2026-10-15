@@ -9,6 +9,7 @@ sources. GitHub Pages publishes site/ as-is and does not run this script.
 
 import argparse
 import os
+import hashlib
 import re
 import shutil
 import sys
@@ -178,6 +179,20 @@ def fill(text, tokens):
     return text
 
 
+def asset_version(rel):
+    """Short content hash for cache-busting css/js URLs."""
+    return hashlib.sha256((OUT / rel).read_bytes()).hexdigest()[:10]
+
+
+def bust_assets(document):
+    """Append ?v=<hash> to every local stylesheet and script URL."""
+    return re.sub(
+        r'((?:href|src)="[^"]*?)((?:css|js)/[A-Za-z0-9_.-]+\.(?:css|js))"',
+        lambda m: m.group(1) + m.group(2) + "?v=" + asset_version(m.group(2)) + '"',
+        document,
+    )
+
+
 def main():
     args = parse_args()
     base = args.base_path
@@ -245,7 +260,7 @@ def main():
             "</body>\n"
             "</html>\n"
         )
-        document = banner + rewrite_links(fill(document, tokens), base)
+        document = banner + bust_assets(rewrite_links(fill(document, tokens), base))
         if "{{" in document:
             sys.exit(f"Unreplaced token left in {filename}")
         if filename == NOT_FOUND[0]:
