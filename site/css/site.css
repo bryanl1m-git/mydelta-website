@@ -595,6 +595,44 @@ body.menu-open {
   font-weight: 400;
 }
 
+.hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 var(--space-24);
+  padding: 0;
+  list-style: none;
+}
+
+.hero__badges li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px 6px 12px;
+  border: 1px solid rgba(250, 92, 59, 0.33);
+  border-radius: 999px;
+  background: var(--color-white);
+  color: #20409a;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.hero__badges svg {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  fill: #fa5c3b;
+}
+
+@media (max-width: 1099px) {
+  .hero__badges {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .hero .btn {
   padding: 13px 24px;
   font-size: 18px;
@@ -730,10 +768,6 @@ body.menu-open {
   width: 32px;
   height: 12px;
   background: var(--color-accent);
-}
-
-.trust-strip {
-  padding-block: 8px 20px;
 }
 
 .trust {
@@ -1744,8 +1778,9 @@ body.menu-open {
    badge sits centred above the copy and the bird is a small corner mark. */
 .band--welcome {
   position: relative;
-  padding-top: 8px;
-  padding-bottom: calc(12px + var(--wave-height));
+  z-index: 1;
+  overflow: visible;
+  padding: 28px 24px calc(28px + var(--wave-height));
 }
 
 .welcome-badge,
@@ -1757,8 +1792,8 @@ body.menu-open {
 }
 
 .welcome-badge {
-  width: 116px;
-  height: 159px;
+  width: 132px;
+  height: 181px;
   margin: 0 auto 16px;
 }
 
@@ -1768,10 +1803,10 @@ body.menu-open {
 
 .welcome-bird {
   position: absolute;
-  top: 12px;
-  right: 16px;
-  width: 72px;
-  height: 72px;
+  top: 14px;
+  right: 14px;
+  width: 60px;
+  height: 60px;
 }
 
 .welcome-copy {
@@ -1779,8 +1814,8 @@ body.menu-open {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: min(508px, calc(100% - 48px));
+  gap: 8px;
+  width: min(508px, 100%);
   margin-inline: auto;
   text-align: center;
 }
@@ -1788,58 +1823,61 @@ body.menu-open {
 .band--welcome h2 {
   margin: 0;
   color: var(--color-accent);
-  font-size: 28px;
-  line-height: 32px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .welcome-lead {
   margin: 0;
   color: var(--color-heading);
   font-weight: 700;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 @media (min-width: 900px) {
   .band--welcome {
-    padding-top: 0;
-    padding-bottom: var(--wave-height);
-    min-height: 615px;
+    --welcome-wave: 80px;
+    min-height: 322px;
+    padding: 0;
+    background-size: 100% var(--welcome-wave);
   }
 
   .welcome-badge {
     position: absolute;
-    top: 140px;
-    left: max(16px, calc(50% - 720px + 222px));
-    width: 236px;
-    height: 323px;
+    z-index: 2;
+    top: -26px;
+    left: max(16px, calc(50% - 720px + 322px));
+    width: 240px;
+    height: 328px;
     margin: 0;
   }
 
   .welcome-basket {
     display: block;
     position: absolute;
-    top: 251px;
-    left: clamp(16px, calc(50% - 720px + 1084px), calc(100% - 188px - 16px));
-    width: 188px;
-    height: 188px;
+    top: 67px;
+    left: clamp(16px, calc(50% - 720px + 1200px), calc(100% - 130px - 16px));
+    width: 130px;
+    height: 130px;
   }
 
   .welcome-bird {
-    top: 449px;
-    left: max(0px, calc(50% - 720px + 31px));
+    top: 192px;
+    left: max(0px, calc(50% - 720px + 70px));
     right: auto;
-    width: 166px;
-    height: 166px;
+    width: 110px;
+    height: 110px;
   }
 
   .welcome-copy {
     position: absolute;
-    top: 257px;
-    left: max(16px, calc(50% - 720px + 540px));
+    top: 138px;
+    left: max(16px, calc(50% - 720px + 610px));
     width: 508px;
     margin: 0;
     text-align: left;
+    transform: translateY(-50%);
   }
 }
 
@@ -2575,13 +2613,13 @@ th {
   }
 
   .hero .wrap {
-    width: min(1260px, calc(100% - 32px));
-    margin-left: max(16px, calc(50% - 720px + 110px));
+    width: min(1300px, calc(100% - 32px));
+    margin-left: max(16px, calc(50% - 720px + 70px));
     margin-right: max(16px, calc(50% - 720px + 70px));
   }
 
   .hero__layout {
-    grid-template-columns: minmax(0, 1fr) 620px;
+    grid-template-columns: minmax(0, 640px) 620px;
     column-gap: 40px;
     align-items: start;
   }
@@ -2778,17 +2816,20 @@ th {
     font-weight: 700;
   }
 
+  .hero__badges {
+    flex-wrap: nowrap;
+    gap: 4px;
+  }
+
+  .hero__badges li {
+    gap: 4px;
+    padding: 6px 9px;
+  }
+
   .hero .btn {
     padding: 16px 40px 16px 32px;
     font-size: 23px;
     line-height: 23px;
-  }
-
-  .trust-strip {
-    display: flex;
-    align-items: center;
-    min-height: 56px;
-    padding-block: 0;
   }
 
   .trust svg {
@@ -3251,10 +3292,6 @@ th {
   .hero {
     padding-top: 0;
     padding-bottom: 24px;
-  }
-
-  .trust-strip {
-    padding-top: 16px;
   }
 
   .quotes__item {
