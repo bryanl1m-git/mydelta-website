@@ -1846,7 +1846,7 @@ body.menu-open {
 @media (min-width: 1100px) {
   .band--welcome {
     --welcome-wave: 80px;
-    min-height: 322px;
+    min-height: 362px;
     padding: 0;
     background-size: 100% var(--welcome-wave);
   }
@@ -1854,25 +1854,25 @@ body.menu-open {
   .welcome-badge {
     position: absolute;
     z-index: 2;
-    /* 160x218, centred in the yellow (about 56px each side, clear of the waves). */
-    top: 30px;
-    left: max(16px, calc(50% - 720px + 362px));
-    width: 160px;
-    height: 218px;
+    /* 140x191, centred in the yellow, clear of both waves (Figma band 420). */
+    top: 64px;
+    left: max(16px, calc(50% - 720px + 372px));
+    width: 140px;
+    height: 191px;
     margin: 0;
   }
 
   .welcome-basket {
     display: block;
     position: absolute;
-    top: 67px;
+    top: 87px;
     left: clamp(16px, calc(50% - 720px + 1200px), calc(100% - 130px - 16px));
     width: 130px;
     height: 130px;
   }
 
   .welcome-bird {
-    top: 192px;
+    top: 212px;
     left: max(0px, calc(50% - 720px + 70px));
     right: auto;
     width: 110px;
@@ -1881,8 +1881,8 @@ body.menu-open {
 
   .welcome-copy {
     position: absolute;
-    top: 138px;
-    left: max(16px, calc(50% - 720px + 570px));
+    top: 159px;
+    left: max(16px, calc(50% - 720px + 560px));
     width: 508px;
     margin: 0;
     text-align: left;

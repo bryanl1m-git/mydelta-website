@@ -135,6 +135,14 @@ def rewrite_links(document, base):
     return document
 
 
+ICON_SIZES = {
+    "facebook": (18, 18),
+    "instagram": (18, 18),
+    "xiaohongshu": (26, 9.289),  # 24:8.574 viewBox ratio
+    "whatsapp": (22, 22),
+}
+
+
 def icon_svg(name):
     raw = (ICONS / f"{name}.svg").read_text(encoding="utf-8")
     match = re.search(r"<svg[^>]*>(.*)</svg>", raw, re.S)
@@ -144,8 +152,10 @@ def icon_svg(name):
     # Xiaohongshu's official mark is a wide wordmark. A square viewBox
     # letterboxes it, so use the tight bounds of that path.
     view_box = "0 7.714 24 8.574" if name == "xiaohongshu" else "0 0 24 24"
+    # Fallback size so the icon stays small if the stylesheet fails or is stale.
+    w, h = ICON_SIZES.get(name, (20, 20))
     return (
-        f'<svg class="icon icon--{name}" viewBox="{view_box}" aria-hidden="true" focusable="false">'
+        f'<svg class="icon icon--{name}" width="{w}" height="{h}" viewBox="{view_box}" aria-hidden="true" focusable="false">'
         + inner
         + "</svg>"
     )
@@ -168,7 +178,7 @@ def social_list(variant):
                 icon=icon_svg(name),
             )
         )
-    return '<ul class="social-list social-list--{variant}">{items}</ul>'.format(
+    return '<ul class="social-list social-list--{variant}" style="list-style: none; padding-left: 0;">{items}</ul>'.format(
         variant=variant, items="".join(items)
     )
 
@@ -179,22 +189,42 @@ def fill(text, tokens):
     return text
 
 
-def asset_version(rel):
-    """Short content hash for cache-busting css/js URLs."""
-    return hashlib.sha256((OUT / rel).read_bytes()).hexdigest()[:10]
+HASHED_ASSETS = ("css/tokens.css", "css/site.css", "js/site.js")
 
 
-def bust_assets(document):
-    """Append ?v=<hash> to every local stylesheet and script URL."""
-    return re.sub(
-        r'((?:href|src)="[^"]*?)((?:css|js)/[A-Za-z0-9_.-]+\.(?:css|js))"',
-        lambda m: m.group(1) + m.group(2) + "?v=" + asset_version(m.group(2)) + '"',
-        document,
-    )
+def write_hashed_assets():
+    """Copy each css/js file to name.<hash>.ext and return {plain: hashed}."""
+    mapping = {}
+    for rel in HASHED_ASSETS:
+        src = OUT / rel
+        stem, ext = src.stem, src.suffix
+        for old in src.parent.glob(f"{stem}.*{ext}"):
+            if re.fullmatch(rf"{re.escape(stem)}\.[0-9a-f]{{10}}{re.escape(ext)}", old.name):
+                old.unlink()
+        digest = hashlib.sha256(src.read_bytes()).hexdigest()[:10]
+        hashed = src.with_name(f"{stem}.{digest}{ext}")
+        shutil.copyfile(src, hashed)
+        mapping[rel] = str(hashed.relative_to(OUT))
+    return mapping
+
+
+def bust_assets(document, mapping):
+    """Point every css/js reference at its hashed filename."""
+    for plain, hashed in mapping.items():
+        document = re.sub(r'((?:href|src)="[^"]*?)' + re.escape(plain) + '"', lambda m: m.group(1) + hashed + '"', document)
+    return document
+
+
+def check_svgs(document, name):
+    """Every inline SVG needs width/height so it cannot blow up without CSS."""
+    for tag in re.findall(r"<svg\b[^>]*>", document):
+        if not (re.search(r'\swidth="', tag) and re.search(r'\sheight="', tag)):
+            sys.exit(f"Inline SVG without width/height in {name}: {tag[:80]}")
 
 
 def main():
     args = parse_args()
+    hashed_assets = write_hashed_assets()
     base = args.base_path
     head = (PARTIALS / "head.html").read_text(encoding="utf-8")
     header = (PARTIALS / "header.html").read_text(encoding="utf-8")
@@ -260,7 +290,8 @@ def main():
             "</body>\n"
             "</html>\n"
         )
-        document = banner + bust_assets(rewrite_links(fill(document, tokens), base))
+        document = banner + bust_assets(rewrite_links(fill(document, tokens), base), hashed_assets)
+        check_svgs(document, filename)
         if "{{" in document:
             sys.exit(f"Unreplaced token left in {filename}")
         if filename == NOT_FOUND[0]:
