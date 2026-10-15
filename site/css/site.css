@@ -1854,10 +1854,11 @@ body.menu-open {
   .welcome-badge {
     position: absolute;
     z-index: 2;
-    top: -26px;
-    left: max(16px, calc(50% - 720px + 322px));
-    width: 240px;
-    height: 328px;
+    /* 160x218, centred in the yellow (about 56px each side, clear of the waves). */
+    top: 30px;
+    left: max(16px, calc(50% - 720px + 362px));
+    width: 160px;
+    height: 218px;
     margin: 0;
   }
 
@@ -1881,7 +1882,7 @@ body.menu-open {
   .welcome-copy {
     position: absolute;
     top: 138px;
-    left: max(16px, calc(50% - 720px + 610px));
+    left: max(16px, calc(50% - 720px + 570px));
     width: 508px;
     margin: 0;
     text-align: left;
