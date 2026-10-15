@@ -3539,3 +3539,15 @@ th {
     display: none;
   }
 }
+
+/* Round 8: Home mobile spacing. */
+@media (max-width: 767px) {
+  .feature-band {
+    padding-top: 32px;
+  }
+
+  .quotes__scroller {
+    padding-inline: 24px;
+    scroll-padding-inline: 24px;
+  }
+}
